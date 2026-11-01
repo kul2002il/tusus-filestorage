@@ -1,0 +1,18 @@
+'<style> body { max-width: initial;}</style>
+'<style> .eq var,i {color: black !important;}</style>
+'<style> .nary {color: black !important;}</style>
+
+
+
+
+f = [1;2;3;4;5;6]
+
+#def macro$(i$; j$)
+#hide
+f_i$ = f.i$
+f_j$ = f.j$
+#show
+s_i$j$ = f_i$ / f_j$
+#end def
+
+macro$(1;3)

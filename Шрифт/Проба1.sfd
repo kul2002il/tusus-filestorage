@@ -1,0 +1,80 @@
+SplineFontDB: 3.2
+FontName: Probe1
+FullName: Probe1
+FamilyName: Probe1
+Weight: Regular
+Copyright: Copyright (c) 2024, ilia
+UComments: "2024-9-28: Created with FontForge (http://fontforge.org)"
+Version: 001.000
+ItalicAngle: 0
+UnderlinePosition: -102.4
+UnderlineWidth: 51.2
+Ascent: 819
+Descent: 205
+InvalidEm: 0
+LayerCount: 2
+Layer: 0 0 "+BBcEMAQ0BD0EOAQ5 +BD8EOwQwBD0A" 1
+Layer: 1 0 "+BB8ENQRABDUENAQ9BDgEOQAA +BD8EOwQwBD0A" 0
+XUID: [1021 452 -1688632719 3150369]
+FSType: 0
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1727528259
+ModificationTime: 1727529536
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 92
+VLineGap: 0
+OS2TypoAscent: 0
+OS2TypoAOffset: 1
+OS2TypoDescent: 0
+OS2TypoDOffset: 1
+OS2TypoLinegap: 92
+OS2WinAscent: 0
+OS2WinAOffset: 1
+OS2WinDescent: 0
+OS2WinDOffset: 1
+HheadAscent: 0
+HheadAOffset: 1
+HheadDescent: 0
+HheadDOffset: 1
+OS2Vendor: 'PfEd'
+MarkAttachClasses: 1
+DEI: 91125
+Encoding: ISO8859-1
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 0
+WinInfo: 0 18 14
+BeginPrivate: 0
+EndPrivate
+BeginChars: 256 1
+
+StartChar: Q
+Encoding: 81 81 0
+Width: 1024
+Flags: HO
+LayerCount: 2
+Back
+SplineSet
+489 -1 m 1
+ 487.044596354 -1.00010850694 484.374004394 -1.16279843887 481 -1 c 0
+ 257.66831621 9.77593423737 221 245 209 447 c 0
+ 196.067087193 664.704032255 287 796 539 794 c 0
+ 792.010742188 791.9921875 864.814312637 697.011061873 899 461 c 0
+ 921.413821622 306.259515027 852.595085702 158.161575159 751 69 c 0
+ 742.118149445 12.4925627359 784.749970665 -26.30248222 809 -71 c 0
+ 819.783117435 -91.2491718391 837.136385012 -110.763592628 833 -135 c 0
+ 836.691489457 -147.519600918 827.697886554 -161.799606133 813 -157 c 0
+ 742.487346464 -162.902139545 684.360685819 -99.3354361235 683 -31 c 0
+ 683.732213287 10.1182688451 641.431103883 25.8501057101 605 21 c 0
+ 573.596564892 15.9701022037 543 9 509 -1 c 0
+ 489 -1 l 1
+EndSplineSet
+EndChar
+EndChars
+EndSplineFont

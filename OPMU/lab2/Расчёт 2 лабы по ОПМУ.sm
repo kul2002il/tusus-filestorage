@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio настольная" version="1.2.9018.0"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="96">
+    <identity>
+      <id>e53cf599-5965-4fb0-add4-1630d95aaa71</id>
+      <revision>3</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <mixedNumbers>false</mixedNumbers>
+      <roundingMode>0</roundingMode>
+      <approximateEqualAccuracy>0</approximateEqualAccuracy>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="2" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true" hideElementsHighlightings="true">
+      <paper id="0" orientation="Portrait" width="748" height="1071" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Studio настольная" version="1.2.9018.0" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.11.9018.0" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="SpecialFunctions" version="1.12.9018.0" guid="2814e667-4e12-48b1-8d51-194e480eabc5" />
+      <assembly name="TextRegion" version="1.11.9018.0" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="18" top="27" width="123" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">f.заданое</e>
+          <e type="operand">2</e>
+          <e type="operand" style="unit">GHz</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="54" width="147" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δf.заданое</e>
+          <e type="operand">500</e>
+          <e type="operand" style="unit">MHz</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="99" width="146" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">dBS.11заданое</e>
+          <e type="operand">15</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="198" width="105" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">f.н</e>
+          <e type="operand">1792</e>
+          <e type="operand" style="unit">MHz</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="225" width="105" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">f.в</e>
+          <e type="operand">2225</e>
+          <e type="operand" style="unit">MHz</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="261" width="121" height="31" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">dBS.11</e>
+          <e type="operand">23.87</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="18" top="297" width="297" height="61" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">f</e>
+          <e type="operand">f.н</e>
+          <e type="operand">f.в</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="none">
+          <e type="operand">1792000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">2225000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+        </result>
+      </math>
+    </region>
+    <region left="324" top="324" width="22" height="25" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Helvetica" fontSize="10">
+        <content>
+          <p>=</p>
+        </content>
+      </text>
+    </region>
+    <region left="342" top="324" width="86" height="25" color="#000000" fontSize="10" showInputData="false">
+      <math>
+        <input>
+          <e type="operand">f</e>
+          <e type="operand">f</e>
+          <e type="function" args="1">eval</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">MHz</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">2008.5</e>
+        </result>
+      </math>
+    </region>
+    <region left="18" top="378" width="294" height="43" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">Δf</e>
+          <e type="operand">f.в</e>
+          <e type="operand">f.н</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="none">
+          <e type="operand">2225000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">1792000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="324" top="387" width="22" height="25" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Helvetica" fontSize="10">
+        <content>
+          <p>=</p>
+        </content>
+      </text>
+    </region>
+    <region left="342" top="387" width="62" height="25" color="#000000" fontSize="10" showInputData="false">
+      <math>
+        <input>
+          <e type="operand">Δf</e>
+          <e type="operand">Δf</e>
+          <e type="function" args="1">eval</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">MHz</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">433</e>
+        </result>
+      </math>
+    </region>
+    <region left="9" top="567" width="369" height="81" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">δf</e>
+          <e type="operand">f</e>
+          <e type="operand">f.заданое</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">f</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="none">
+          <e type="operand">2008500000</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2000000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">2008500000</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </result>
+      </math>
+    </region>
+    <region left="387" top="594" width="22" height="25" color="#000000" fontSize="10">
+      <text lang="rus" fontFamily="Helvetica" fontSize="10">
+        <content>
+          <p>=</p>
+        </content>
+      </text>
+    </region>
+    <region left="405" top="594" width="70" height="25" color="#000000" fontSize="10" showInputData="false">
+      <math>
+        <input>
+          <e type="operand">δf</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">%</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">0.4232</e>
+        </result>
+      </math>
+    </region>
+    <region left="9" top="666" width="377" height="81" color="#000000" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">δΔf</e>
+          <e type="operand">Δf</e>
+          <e type="operand">Δf.заданое</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">Δf</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="none">
+          <e type="operand">433000000</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">500000000</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">433000000</e>
+          <e type="operand">1</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+        </result>
+      </math>
+    </region>
+    <region left="396" top="693" width="22" height="25" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="rus" fontFamily="Helvetica" fontSize="10">
+        <content>
+          <p>=</p>
+        </content>
+      </text>
+    </region>
+    <region left="414" top="693" width="78" height="25" color="#000000" fontSize="10" showInputData="false">
+      <math>
+        <input>
+          <e type="operand">δΔf</e>
+        </input>
+        <contract>
+          <e type="operand" style="unit">%</e>
+        </contract>
+        <result action="numeric">
+          <e type="operand">15.4734</e>
+        </result>
+      </math>
+    </region>
+  </regions>
+</worksheet>

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Created with Calcpad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script src="file:////usr/share/Calcpad/doc/jquery-3.6.3.min.js"></script>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-size: 11pt;
+            font-family: 'Segoe UI', 'Arial Nova', Helvetica, sans-serif;
+            margin-left: 5mm;
+            max-width: 190mm;
+        }
+
+        h1, h2, h3, h4, h5, h6, .errorHeader, .roundBox {
+            font-family: 'Arial Nova', Helvetica, sans-serif;
+            margin: 0.5em 0 0.5em 0;
+            padding: 0;
+            line-height: 150%;
+        }
+
+        h1 {font-size: 2.1em;}
+        h2 {font-size: 1.7em;}
+        h3 {font-size: 1.4em;}
+        h4 {font-size: 1.2em;}
+        h5 {font-size: 1.1em;}
+        h6 {font-size: 1em;}
+
+        p, li {
+            margin: 0.3em 0 0.3em 0;
+            padding: 0;
+            line-height: 150%;
+        }
+
+        select, kbd {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        a:hover {
+            background-color: #e9f6ff;
+        }
+
+        .eq, input[type="text"], table.matrix {
+            font-family: 'Georgia Pro', 'Century Schoolbook', 'Times New Roman', Times, serif;
+        }
+
+            .eq var {
+                color: #06d;
+                font-size: 105%;
+            }
+
+            .eq i {
+                color: #086;
+                font-style: normal;
+                font-size: 90%;
+            }
+
+            i.unit {
+                color: #043!important;
+                font-size: 90%!important;
+                vertical-align: -1pt;
+            }
+
+            sup.unit {
+                font-family: Calibri, Candara, Corbel, sans-serif;
+                font-size: 70%!important;
+            }
+
+            .eq b {
+                font-weight: 600;
+            }
+
+            .eq sub {
+                font-family: Calibri, Candara, Corbel, sans-serif;
+                font-size: 80%;
+                vertical-align: -18%;
+                margin-left: 1pt;
+            }
+
+            .eq sup {
+                display: inline-block;
+                margin-left: 1pt;
+                margin-top: -3pt;
+                font-size: 75%;
+            }
+
+            .eq small {
+                font-family: Calibri, Candara, Corbel, sans-serif;
+                font-size: 70%;
+            }
+
+                .eq small var {
+                    font-family: 'Georgia Pro', 'Century Schoolbook', 'Times New Roman', Times, serif;
+                    font-size: 8.5pt;
+                }
+
+                .eq small i {
+                    font-family: 'Georgia Pro', 'Century Schoolbook', 'Times New Roman', Times, serif;
+                    font-size: 6pt;
+                }
+
+                .eq u, input, select {
+                    background-color: #fffad8;
+                }
+
+                input[type="text"], select {
+                    font-size: 10pt;
+                    padding: 0.2em 0.4em;
+                    border: 0.5pt solid #CCC;
+                    border-radius: 0.35em;
+                    box-shadow: 0.06em 0.06em 0.5em #ddd;
+                    min-width: 3em;
+                }
+
+                input[type="text"] {
+                    text-align: right;
+                }
+
+                input[type="checkbox"],
+                input[type="radio"] {
+                    vertical-align: baseline;
+                    position: relative;
+                    bottom: -1pt;
+                    margin-right: 1pt;
+                }
+
+                    input[type="checkbox"].post:disabled:not(:checked),
+                    input[type="checkbox"].post:disabled:not(:checked) + label,
+                    input[type="radio"].post:disabled:not(:checked),
+                    input[type="radio"].post:disabled:not(:checked) + label {
+                        display: none;
+                    }
+
+                select:disabled {
+                    background: none;
+                    color: #444;
+                }
+
+                select.post:disabled {
+                    font-size: 12pt;
+                    border: none;
+                    box-shadow: none;
+                    color: red;
+                    background: none;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                }
+
+                select.post:disabled::-ms-expand {
+                    display: none;
+                }
+
+                input[type="text"]:focus {
+                    box-shadow: 0.1em 0.1em 1em #ccc;
+                    color: black;
+                }
+
+        td, th {
+            padding: 2pt 4pt 2pt 4pt;
+            vertical-align: top;
+        }
+
+        small {
+            font-weight: normal;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+            table.bordered {
+                margin-top: 1em;
+            }
+
+                table.bordered th {
+                    background-color: #F0F0F0;
+                    border: solid 1pt #AAAAAA;
+                }
+
+                table.bordered td {
+                    border: solid 1pt #CCCCCC;
+                }
+
+            table.centered td, .matrix .td {
+                text-align: center;
+            }
+
+            table.data td {
+                text-align: right;
+            }
+
+                table.data td:first-child {
+                    text-align: left;
+                    padding-left: 0;
+                }
+
+        .matrix {
+            display: inline-table;
+        }
+
+            .matrix .tr {
+                display: table-row;
+            }
+
+            .matrix .td {
+                white-space: nowrap;
+                padding: 0 2pt 0 2pt;
+                min-width: 10pt;
+                display: table-cell;
+                font-size: 10pt;
+            }
+
+                .matrix .td:first-child,
+                .matrix .td:last-child {
+                    width: 0.75pt;
+                    min-width: 0.75pt;
+                    max-width: 0.75pt;
+                    padding: 0 1pt 0 1pt;
+                }
+
+                .matrix .td:first-child {
+                    border-left: solid 1pt black;
+                }
+
+                .matrix .td:last-child {
+                    border-right: solid 1pt black;
+                }
+
+            .matrix .tr:first-child .td:first-child,
+            .matrix .tr:first-child .td:last-child {
+                border-top: solid 1pt black;
+            }
+
+            .matrix .tr:last-child .td:first-child,
+            .matrix .tr:last-child .td:last-child {
+                border-bottom: solid 1pt black;
+            }
+
+        .matrix-input td, .matrix-input th {
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+            font-size: 10pt;
+            padding: 1pt 2pt;
+        }
+
+        .matrix-input td {
+            border: 1pt solid #ccc;
+            min-width: 4ch;
+            text-align: right;
+            white-space: nowrap;
+            outline: none;
+        }
+
+            .matrix-input td:focus {
+                background-color: #fffad8;
+                outline: 1px solid black;
+            }
+
+        .matrix-input th {
+            border: 1px solid #aaa;
+            min-width: 3ch;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        .out {
+            display: none;
+        }
+
+        .invalid {
+            background-color: #fdd;
+            outline: 1px solid #d33;
+        }
+
+        .matrix-input td.invalid:focus {
+            background-color: #fcc;
+            outline: 1px solid #d33;
+        }
+
+        .controls {
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+            font-size: 10pt;
+        }
+            
+            .controls input {
+                font-size: inherit;
+                font-family: inherit;
+                width: 28pt;
+                padding: 1pt;
+                font-weight: bold;
+                text-align: right;
+                outline: none;
+                border: solid 1pt #eee;
+                background-color: #f8f8f8;
+            }
+
+        .block {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 4pt;
+            margin-left: -1pt;
+            border-left: solid 1pt #80b0e8;
+            background: linear-gradient(to right, rgba(0, 192, 255, 0.06), rgba(0, 192, 255, 0.03));
+        }
+
+            .block .block {
+                background: linear-gradient(to right, rgba(0, 192, 255, 0.04), rgba(0, 192, 255, 0.02));
+            }
+
+        .dvcs:has(.block):not(.block *) {
+            display: inline-block;
+            border-left: solid 1pt #80b0e8;
+            padding-left: 0;
+            margin-left: 3pt;
+        }
+
+            .dvcs:has(.block):not(.block *)::before {
+                content: " 🞀";
+                font-size: 9pt;
+                color: #90c4f0;
+                margin-left: -4.5pt;
+            }
+
+        .arr {
+            color: #90c4f0;
+        }
+
+        .r0, .r1, .r2, .r3,
+        .o0, .o1, .o2, .o3,
+        .b1, .b2, .b3,
+        .c1, .c2, .c3, .c4,
+        .c5, .c6, .c7, .c8 {
+            display: inline-block;
+        }
+
+        .r0, .r1, .r2, .r3 {
+            margin-top: -1.5pt;
+            margin-right: 1.5pt;
+            vertical-align: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right top;
+        }
+
+        .o0, .o1, .o2, .o3 {
+            border-top: solid 0.75pt;
+            line-height: 130%;
+            vertical-align: middle;
+            margin-top: 0.75pt;
+            padding-top: 1.25pt;
+            padding-left: 1pt;
+            padding-right: 1pt;
+        }
+
+        .r {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 150%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: -9.5pt;
+            position: relative;
+            top: 1pt;
+        }
+
+        .r0 {
+            content: "";
+            background-image: url("data: image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwIDIwIiBoZWlnaHQ9IjE1cHQiIHdpZHRoPSIxMHB4Ij4NCiAgPHBvbHlsaW5lIHBvaW50cz0iMCwxMyAyLDEyIDUsMTkgOSwwIiBzdHlsZT0ic3Ryb2tlOmJsYWNrOyBzdHJva2Utd2lkdGg6MC42cHQ7IHN0cm9rZS1saW5lam9pbjpyb3VuZDsgc3Ryb2tlLWxpbmVjYXA6cm91bmQ7IGZpbGw6bm9uZSIgLz4NCiAgPGxpbmUgeDE9IjIuMiIgeTE9IjEyLjMiIHgyPSI0LjYiIHkyPSIxOC43IiBzdHlsZT0ic3Ryb2tlOmJsYWNrOyBzdHJva2Utd2lkdGg6MC44cHQ7IHN0cm9rZS1saW5lY2FwOnJvdW5kOyIgLz4NCjwvc3ZnPg==");
+            width: 8pt;
+            height: 16pt;
+            margin-left: -8pt;
+        }
+
+        .r1 {
+            content: "";
+            background-image: url("data: image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE1IDQwIiBoZWlnaHQ9IjMwcHQiIHdpZHRoPSIxNXB4Ij4NCiAgPHBvbHlsaW5lIHBvaW50cz0iMSwyNiAzLDI0IDgsMzggMTQsMCIgc3R5bGU9InN0cm9rZTpibGFjazsgc3Ryb2tlLXdpZHRoOjAuNnB0OyBzdHJva2UtbGluZWpvaW46cm91bmQ7IHN0cm9rZS1saW5lY2FwOnJvdW5kOyBmaWxsOm5vbmUiIC8+DQogIDxsaW5lIHgxPSIzLjIiIHkxPSIyNC40IiB4Mj0iNy42IiB5Mj0iMzcuNiIgc3R5bGU9InN0cm9rZTpibGFjazsgc3Ryb2tlLXdpZHRoOjFwdDsgc3Ryb2tlLWxpbmVjYXA6cm91bmQ7IiAvPg0KPC9zdmc+");
+            width: 12pt;
+            height: 32pt;
+            margin-left: -12pt;
+        }
+
+        .r2 {
+            content: "";
+            background-image: url("data: image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDIwIDYwIiBoZWlnaHQ9IjQ1cHQiIHdpZHRoPSIyMHB4Ij4NCiAgPHBvbHlsaW5lIHBvaW50cz0iMiwzNyA1LDM0IDExLDU1IDE5LDAiIHN0eWxlPSJzdHJva2U6YmxhY2s7IHN0cm9rZS13aWR0aDowLjZwdDsgc3Ryb2tlLWxpbmVqb2luOnJvdW5kOyBzdHJva2UtbGluZWNhcDpyb3VuZDsgZmlsbDpub25lIiAvPg0KICA8bGluZSB4MT0iNS4xIiB5MT0iMzQuNiIgeDI9IjEwLjYiIHkyPSI1NC40IiBzdHlsZT0ic3Ryb2tlOmJsYWNrOyBzdHJva2Utd2lkdGg6MS4ycHQ7IHN0cm9rZS1saW5lY2FwOnJvdW5kOyIgLz4NCjwvc3ZnPg==");
+            width: 16pt;
+            height: 48pt;
+            margin-left: -16pt;
+        }
+
+        .r3 {
+            content: "";
+            background-image: url("data: image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI1IDgwIiBoZWlnaHQ9IjYwcHQiIHdpZHRoPSIyNXB4Ij4NCiAgPHBvbHlsaW5lIHBvaW50cz0iMyw1MCA3LDQ2IDE1LDc0IDI0LDAiIHN0eWxlPSJzdHJva2U6YmxhY2s7IHN0cm9rZS13aWR0aDowLjZwdDsgc3Ryb2tlLWxpbmVqb2luOnJvdW5kOyBzdHJva2UtbGluZWNhcDpyb3VuZDsgZmlsbDpub25lIiAvPg0KICA8bGluZSB4MT0iNy4xIiB5MT0iNDYuOCIgeDI9IjE0LjUiIHkyPSI3My4yIiBzdHlsZT0ic3Ryb2tlOmJsYWNrOyBzdHJva2Utd2lkdGg6MS4ycHQ7IHN0cm9rZS1saW5lY2FwOnJvdW5kOyIgLz4NCjwvc3ZnPg==");
+            width: 19pt;
+            height: 62pt;
+            margin-left: -19pt;
+        }
+
+        .nth {
+            position: relative;
+            bottom: 1pt;
+        }
+
+        .eq small.nth {
+            font-size: 70%;
+        }
+
+        .dvr small {
+            font-size: 70%;
+        }
+
+            .dvr small var {
+                font-size: 105%;
+            }
+
+        sup.raised {
+            vertical-align: top;
+        }
+
+        sup .r0, sup .r1, sup .r2, sup .r3 {
+            zoom: 0.7;
+            -moz-transform: scale(0.7);
+            -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+            transform-origin: top right;
+            max-height: none;
+        }
+
+        sup .r0 { margin-left: -5pt; }
+        sup .r1 { margin-left: -11pt; }
+        sup .r2 { margin-left: -13pt; }
+        sup .r3 { margin-left: -16pt; }
+
+        .b1, .b2, .b3, .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8 {
+            vertical-align: middle;
+            font-weight: 100;
+            font-stretch: ultra-condensed;
+        }
+
+        .b2, .b3, .c2, .c3, .c4, .c5, .c6, .c7, .c8 {
+            font-family: 'Jost* Hairline', sans-serif;
+        }
+
+        .b0, .b1, .c1 {
+            font-family: 'Jost* Thin', sans-serif;
+        }
+
+        .b0 {
+            font-size: 120%;
+            font-weight: 600;
+            padding: 0 1pt 0 1pt;
+        }
+
+        .b1 {
+            font-size: 240%;
+            margin-top: -3pt;
+            margin-left: -1pt;
+            margin-right: -1pt;
+        }
+
+        .b2 {
+            font-size: 370%;
+            margin-top: -5pt;
+            margin-left: -3pt;
+            margin-right: -3pt;
+        }
+
+        .b3 {
+            font-size: 520%;
+            margin-top: -8pt;
+            margin-left: -5pt;
+            margin-right: -5pt;
+        }
+
+        .c1 {
+            font-size: 240%;
+            margin-top: -4pt;
+        }
+
+        .c2 {
+            font-size: 360%;
+            margin-top: -6pt;
+            margin-left: -2.5pt;
+            margin-right: -0.5pt;
+        }
+
+        .c3 {
+            font-size: 480%;
+            margin-top: -8pt;
+            margin-left: -3pt;
+            margin-right: -1pt;
+        }
+
+        .c4 {
+            font-size: 600%;
+            margin-top: -10pt;
+            margin-left: -4pt;
+            margin-right: -2pt;
+            transform: scaleX(0.9);
+        }
+
+        .c5 {
+            font-size: 710%;
+            margin-top: -11.5pt;
+            margin-left: -6pt;
+            margin-right: -4pt;
+            transform: scaleX(0.8);
+        }
+
+        .c6 {
+            font-size: 820%;
+            margin-top: -13pt;
+            margin-left: -7pt;
+            margin-right: -5pt;
+            transform: scaleX(0.7);
+        }
+
+        .c7 {
+            font-size: 930%;
+            margin-top: -14.5pt;
+            margin-left: -8pt;
+            margin-right: -6pt;
+            transform: scaleX(0.6);
+        }
+
+        .c8 {
+            font-size: 1040%;
+            margin-top: -16pt;
+            margin-left: -9pt;
+            margin-right: -7pt;
+            transform: scaleX(0.5);
+        }
+
+        .dvc, .dvr, .dvs {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .dvc {
+            padding-left: 2pt;
+            padding-right: 2pt;
+            text-align: center;
+            line-height: 110%;
+        }
+
+        .dvr {
+            text-align: center;
+            line-height: 110%;
+            position: relative;
+            top: -1pt;
+        }
+
+        .dvs {
+            text-align: left;
+            line-height: 110%;
+        }
+
+        .dvl {
+            display: block;
+            border-bottom: solid 1pt black;
+            margin-top: 1pt;
+            margin-bottom: 1pt;
+        }
+
+        .nary {
+            color: #C080F0;
+            font-size: 230%;
+            font-family: "Georgia Pro Light", serif;
+            font-weight: 200;
+            line-height: 70%;
+            display: block;
+            margin: 0 1pt 3pt 1pt;
+        }
+
+            .nary em {
+                display: block;
+                transform: scaleX(0.7) rotate(7deg);
+            }
+
+        .dvc.down {
+            position: relative;
+            top: 0.5em;
+        }
+
+        .eq:has(> .dvc.down):not(:has(> .dvc.up)) {
+            position: relative;
+            bottom: 0.6em;
+            margin-bottom: -0.5em;
+        }
+
+        .dvc.up {
+            position: relative;
+            bottom: 0.6em;
+        }
+
+
+        .eq:has(> .dvc.up):not(:has(> .dvc.down)) {
+            position: relative;
+            top: 0.6em;
+            margin-bottom: -0.5em;
+        }
+
+        .dvc .dvr {
+            line-height: 95%;
+            margin-top: -2pt;
+            margin-bottom: -3pt;
+        }
+
+        .dvc .nary {
+            font-size: 140%;
+            line-height: 60%;
+            font-family: "Georgia Pro", serif;
+            font-weight: normal;
+        }
+
+        .low {
+            font-size: 70%;
+            display: inline-block;
+            position: relative;
+            top: 1.2em;
+        }
+
+        .cond {
+            color: #E000D0;
+        }
+
+        .err {
+            color: Crimson;
+            background-color: #FEE;
+        }
+
+        .ok {
+            color: Green;
+            background-color: #F0FFF0;
+        }
+
+        .ref {
+            float: right;
+            margin-left: 18pt;
+            color: Green;
+            background-color: #F8FFF0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .side {
+            float: right;
+            max-width: 50%;
+        }
+
+        .plot {
+            max-width: 100%
+        }
+
+        .indent {
+            border-left: 0.75pt solid #dddddd;
+            padding-left: 2em;
+        }
+
+        span.indent {
+            display: inline-block;
+        }
+
+        .fold {
+            height: 2.4em;
+            overflow: hidden;
+        }
+
+        .unfold {
+            height: auto;
+            overflow: auto;
+        }
+
+            .fold > :first-child, .unfold > :first-child {
+                cursor: pointer;
+            }
+
+                .fold > :first-child:hover, .unfold > :first-child:hover {
+                    color: #0066bb;
+                    text-decoration: underline;
+                }
+
+                .fold > :first-child::after {
+                    content: " ... ▼";
+                    font-size: 80%;
+                }
+
+                .unfold > :first-child::after {
+                    content: " ▲";
+                    font-size: 80%;
+                }
+
+        .vec {
+            font-family: 'Cambria Math', serif;
+            color: #8af;
+            font-style: normal;
+            display: inline-block;
+            vertical-align: 2pt;
+            margin-left: 3pt;
+            margin-right: -7pt;
+        }
+
+        small .vec, sup .vec {
+            margin-left: 2pt;
+            margin-right: -6pt;
+        }
+
+        #Units {
+            float: right;
+        }
+
+        @media screen {
+            .no-screen {
+                display: none;
+            }
+        }
+
+        @media print {
+            .side {
+                zoom: 0.8;
+                -moz-transform: scale(0.8);
+            }
+
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        @page {
+            size: A4 portrait;
+            margin-left: 20mm;
+            margin-right: 10mm;
+            margin-top: 10mm;
+            margin-bottom: 10mm;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .value {
+            position: relative;
+            background-color: #f4fbff;
+            border-radius: 3pt;
+        }
+
+            .value:after {
+                content: "";
+                position: absolute;
+                left: 100%;
+                top: -100%;
+                transform: translateY(-50%);
+                margin-left: 2pt;
+                height: 16pt;
+                line-height: 16pt;
+                vertical-align: middle;
+                width: fit-content;
+                white-space: nowrap;
+                min-width: 10pt;
+                z-index: 1;
+                padding: 0 6pt 0 6pt;
+                border-radius: 6pt 6pt 6pt 0;
+                background: #000;
+                color: #fff;
+                font-family: 'Segoe UI', sans-serif;
+                font-style: normal;
+                font-size: 10pt;
+                text-align: center;
+                display: none;
+                opacity: 0;
+                transition: opacity 2s;
+                user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                -moz-user-select: none;
+            }
+
+            .value:hover:after {
+                content: attr(data-value);
+                display: block;
+                opacity: 1;
+            }
+
+        .errorHeader {
+            color: white;
+            background-color: crimson;
+            font-size: 10pt;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 0;
+            width: 100vw;
+            max-width: 100%;
+            height: 1.8em;
+            line-height: 1.2em;
+            padding-left: 6pt;
+            overflow-x: hidden;
+        }
+
+        .roundBox {
+            background-color: #fee;
+            color: crimson;
+            font-size: 9pt;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 4pt;
+            min-width: 1.1em;
+            padding-left: 2pt;
+            padding-right: 2pt;
+            margin-top: 2pt;
+        }
+
+            .roundBox:hover {
+                background-color: white;
+            }
+
+        .lineLink {
+            background: none;
+            color: #b0e0ff;
+            font-family: Calibri, sans-serif;
+            font-size: 10pt;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: left;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            padding-top: 0.2em;
+            width: 1.6em;
+            height: 4em;
+            z-index: 1;
+        }
+
+            .lineLink:hover {
+                background: none;
+                color: #09e;
+            }
+    </style>
+</head>
+<body>
+    <script>
+        let contextMenu = false;
+        function getVerticalPosition(line) { return document.querySelector("[data-text='" + line + "']").getBoundingClientRect().top; }
+        function isNumeric(s) { return s.match(/^-?\d+(?:\.\d+)?$/); }
+        function selectAll(el) {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const sel = getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+        if (jQuery) {
+            function getHtmlWithInput() {
+                $("input[type=text]").each(function () {
+                    $(this).attr("value", $(this).val());
+                });
+                $("input[type=hidden]").each(function () {
+                    $(this).attr("value", $(this).val());
+                });
+                $("textarea").each(function () {
+                    $(this).html($(this).val());
+                });
+                $("input[type=radio]").each(function () {
+                    if (this.checked)
+                        $(this).attr("checked", "checked");
+                    else
+                        $(this).removeAttr("checked");
+                });
+                $("input[type=checkbox]").each(function () {
+                    if (this.checked)
+                        $(this).attr("checked", "checked");
+                    else
+                        $(this).removeAttr("checked");
+                });
+                $("select option").each(function () {
+                    if (this.selected) {
+                        $(this).attr("selected", "true");
+                    }
+                    else
+                        $(this).removeAttr("selected");
+                });
+                return document.body.outerHTML;
+            }
+
+            function getTargetId(element) {
+                const id = $(element).attr("name");
+                if (id != null && id.length > 0)
+                    return id;
+
+                return $(element).data("target");
+            }
+
+            function getValue(id, source) {
+                let value = "";
+                let target = $("#" + id + " input");
+                const domObj = target.get(0);
+                if (domObj == null || domObj.Length == 0) {
+                    target = $("#" + id + " .eq u");
+                    target.each(function () {
+                        value += $(this).text() + ";";
+                    });
+                    $(source).prop('disabled', true);
+                }
+                else {
+                    target.each(function () {
+                        value += $(this).val() + ";";
+                    });
+                }
+                if (value.length > 1) {
+                    value = value.slice(0, -1);
+                }
+                return value;
+            }
+
+            function validateCell(cell) {
+                const s = $(cell).text().trim();
+                if (isNumeric(s)) {
+                    $(cell).removeClass('invalid').removeAttr('title');
+                } else {
+                    $(cell).addClass('invalid').attr('title', 'Invalid number');
+                }
+                return s;
+            }
+
+            function controlValue($input, fallback) {
+                const n = Number.parseInt($input.val());
+                if (!Number.isFinite(n))
+                    return fallback;
+
+                const min = Number.parseInt($input.attr('min')) || 1;
+                const max = Number.parseInt($input.attr('max')) || 100;
+                return Math.min(Math.max(n, min), max);
+            }
+
+            function MatrixWidget(table) {
+                // Keep this function free of guard clauses - the minifier rewrites them
+                // into a block and hoists the inner functions out of it, which breaks
+                // the closures over the constants below.
+                const $table = $(table);
+                const matrixId = table.id.substring(3);  // "in-m-1" -> "m-1"
+                // A page can merge several outputs, so the same id may occur more than
+                // once. Pair each table with the controls and the output of the same rank
+                // instead of with the first ones that match by id.
+                const rank = $('.matrix-input[id="' + table.id + '"]').index(table);
+                const $out = $('[id="out-' + matrixId + '"]').eq(rank);
+                const $controls = $('[data-for="' + matrixId + '"]').eq(rank);
+                const $inRows = $controls.find('.in-rows');
+                const $inCols = $controls.find('.in-cols');
+
+                // Cells are kept here, so that shrinking the matrix and growing it back
+                // does not discard the values. Missing ones default to "0".
+                const cells = new Map();
+                let maxRow = 0, maxCol = 0;
+                $table.find('td[data-r]').each(function () {
+                    const r = Number.parseInt(this.dataset.r),
+                        c = Number.parseInt(this.dataset.c);
+                    if (!Number.isFinite(r) || !Number.isFinite(c))
+                        return;
+
+                    const s = $(this).text().trim();
+                    cells.set(r + ',' + c, s.length ? s : '0');
+                    if (r > maxRow) maxRow = r;
+                    if (c > maxCol) maxCol = c;
+                });
+
+                function getCell(r, c) {
+                    const key = r + ',' + c;
+                    return cells.has(key) ? cells.get(key) : '0';
+                }
+
+                const state = {
+                    rows: controlValue($inRows, maxRow + 1),
+                    cols: controlValue($inCols, maxCol + 1)
+                };
+
+                function updateOut() {
+                    const rows = [];
+                    for (let r = 0; r < state.rows; r++) {
+                        const row = [];
+                        for (let c = 0; c < state.cols; c++) row.push(getCell(r, c));
+                        rows.push(row.join('; '));
+                    }
+                    $out.text('[' + rows.join(' | ') + ']');
+                }
+
+                function render() {
+                    $table.empty();
+                    const $tr = $('<tr>');
+                    $tr.append($('<th>'));
+                    for (let c = 0; c < state.cols; c++) {
+                        $tr.append($('<th>', { text: c + 1 }));
+                    }
+                    $table.append($tr);
+                    for (let r = 0; r < state.rows; r++) {
+                        const $tr = $('<tr>');
+                        $tr.append($('<th>', { text: r + 1 }));
+                        for (let c = 0; c < state.cols; c++) {
+                            const $td = $('<td>', {
+                                contentEditable: 'plaintext-only',
+                                text: getCell(r, c)
+                            })
+                                .attr('data-r', r)
+                                .attr('data-c', c)
+                                .on('input', function () {
+                                    cells.set(r + ',' + c, validateCell(this));
+                                    updateOut();
+                                })
+                                .on('focus', function () {
+                                    selectAll(this);
+                                })
+                                .on('keydown', function (e) {
+                                    if (e.key === 'Enter') { e.preventDefault(); this.blur(); }
+                                });
+                            validateCell($td);
+                            $tr.append($td);
+                        }
+                        $table.append($tr);
+                    }
+                    updateOut();
+                }
+
+                function resize(nr, nc) {
+                    if (nr === state.rows && nc === state.cols)
+                        return;
+
+                    state.rows = nr;
+                    state.cols = nc;
+                    render();
+                }
+
+                $inRows.on('input', function () {
+                    resize(controlValue($(this), state.rows), state.cols);
+                });
+
+                $inCols.on('input', function () {
+                    resize(state.rows, controlValue($(this), state.cols));
+                });
+
+                $inRows.on('change', function () { $(this).val(state.rows).removeClass('invalid').removeAttr('title'); });
+                $inCols.on('change', function () { $(this).val(state.cols).removeClass('invalid').removeAttr('title'); });
+
+                render();
+            }
+
+            $(document).ready(function () {
+
+                $(".dvcs:has(.block) > :first-child").html("&hairsp;");
+                $("#Units").change(function () { $(".Units").text($(this).val()); });
+                $(".fold > :first-child").click(function () {
+                    if ($(this).parent().hasClass("fold")) {
+                        $(this).parent().removeClass("fold").addClass("unfold");
+                    }
+                    else {
+                        $(this).parent().removeClass("unfold").addClass("fold");
+                    }
+                });
+
+                $("select").each(function (index) {
+                    if ($(this).prop("id") != "Units") {
+                        const id = getTargetId(this);
+                        if (id != null && id.length > 0) {
+                            const value = getValue(id, this);
+                            $(this).val(value);
+                        }
+                    }
+
+                });
+
+                $("select").change(function () {
+                    const id = getTargetId(this);
+                    if (id != null && id.length > 0) {
+                        const target = $("#" + id + " input");
+                        if (target != null) {
+                            const values = $(this).val().split(";");
+                            target.each(function (index) {
+                                $(this).val(values[index]);
+                            });
+                        }
+                    }
+                });
+
+                $("input:radio, input:checkbox").each(function (index) {
+                    const id = getTargetId(this);
+                    if (id != null && id.length > 0) {
+                        const value = getValue(id, this);
+                        $(this).prop("checked", $(this).val() == value);
+                    }
+                });
+
+                $("input:radio, input:checkbox").change(function () {
+                    const id = getTargetId(this);
+                    if (id != null && id.length > 0) {
+                        const target = $("#" + id + " input");
+                        if (target != null) {
+                            if ($(this).prop("checked")) {
+                                const values = $(this).val().split(";");
+                                target.each(function (index) {
+                                    $(this).val(values[index]);
+                                });
+                            }
+                            else if ($(this).prop("type") == "checkbox") {
+                                target.each(function () {
+                                    $(this).val("0");
+                                });
+                            }
+                        }
+                    }
+                });
+
+                $(".line:not(style, script)").each(function () {
+                    const line = $(this).prop("id").split("-")[1];
+                    const $lineLink = $('<a class="lineLink" href="#0" data-text="' + line + '" title="Code line ' + line + '">&larr;</a>');
+                    $(this).append($lineLink);
+                    $lineLink.hide();
+                    $(this).hover(function () {
+                        $(".lineLink").hide();
+                        $lineLink.show();
+                    });
+                    $(window).scroll(function () {
+                        $lineLink.hide();
+                    });
+                });
+
+                $("body").mouseleave(function () {
+                    $(".lineLink").hide();
+                });
+
+                $(".roundBox").click(function () {
+                    const line = $(this).data("line");
+                    const e = document.getElementById("line-" + line);
+                    if (e) {
+                        window.scrollTo(0, e.offsetTop - $(this).outerHeight() - 20);
+                    }
+                });
+                $(".money").each(function () { $(this).text(Number(($(this).text())).toFixed(2)); });
+
+                $("input").change(function() {
+                    const e = $(this);
+                    const s = e.val();
+                    if (isNumeric(s)) {
+                        e.removeClass("invalid").removeAttr("title");
+                    } else {
+                        e.addClass("invalid").attr("title", "Invalid number");
+                    }
+                });
+
+                $("a").click(function () {
+                    chrome.webview.postMessage('clicked');
+                });
+
+                addEventListener('click', () => {
+                    chrome.webview.postMessage('focused');
+                });
+
+                $(function () {
+                    $('.matrix-input').each(function () {
+                        MatrixWidget(this);
+                    });
+                });
+            });
+        }
+        document.oncontextmenu = function () { contextMenu = true; };
+        document.onmousedown = function () { contextMenu = false; };
+    </script><style> body { max-width: initial;}</style> 
+<style> .eq var,i {color: black !important;}</style> 
+<style> .nary {color: black !important;}</style> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>6.1. Измерить индуктивность катушки методом непосредственного отсчета прибором Е9-4 (Е4-4) на одной из частот, указанных на передней панели. Оценить точность измерения. </h3>
+<p>&nbsp;</p>
+<p><span class="eq"><var>f</var><sub>изм</sub> = 2,4 <i>МГц</i> = 2400 <i>кГц</i></span>  — частота измерений </p>
+<p><span class="eq"><var>L</var><sub>изм_Е4_4</sub> = 74 <i>мкГн</i></span>  — измеренное значение </p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>изм</sub> = 60 <i>пФ</i></span>  — ёмкость, показанная прибором при измерении </p>
+<p>&nbsp;</p>
+<p>На основании технических данных куметра Е4-4 </p>
+<p><span class="eq"><var>ΔC</var><sub>Е4_4</sub> ( <var>C</var><sub>изм</sub> )  = <span class="dvcs"><span class="c1">{</span><span class="dvs">if <var>C</var><sub>изм</sub> &lt; 100 <i>пФ</i>: 1 <i>пФ</i><br />else: <var>C</var><sub>изм</sub> · 1 <i>%</i></span></span></span></p>
+<p>Погрешность измеренной ёмкости составляет: </p>
+<p><span class="eq"><var>ΔC</var><sub>изм</sub> = <var>ΔC</var><sub>Е4_4</sub>  ( <var>C</var><sub>изм</sub> )  = <var>ΔC</var><sub>Е4_4</sub>  ( 60 <i>пФ</i> )  = 1 <i>пФ</i></span></p>
+<p><span class="eq"><var>δC</var><sub>изм</sub> = <span class="dvc"><var>ΔC</var><sub>изм</sub><span class="dvl"></span><var>C</var><sub>изм</sub></span> = <span class="dvc">1 <i>пФ</i><span class="dvl"></span>60 <i>пФ</i></span> = 1,667 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p>На основании частотомера Ч3-44 </p>
+<p><span class="eq"><var>δ</var><sub>кв</sub> = 10<sup>-5</sup></span>  — измерения снимались через 15 минут самопрогрева </p>
+<p><span class="eq"><var>t</var><sub>сч</sub> = 100 <i>мс</i></span>  — время счёта </p>
+<p><span class="eq"><var>δf</var><sub>изм</sub> = <var>δ</var><sub>кв</sub> + <span class="dvc">1<span class="dvl"></span><var>f</var><sub>изм</sub> · <var>t</var><sub>сч</sub></span> = 10<sup>-5</sup> + <span class="dvc">1<span class="dvl"></span>2400 <i>кГц</i> · 100 <i>мс</i></span> = 0,001417 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p>По методичке </p>
+<p><span class="eq"><var>δL</var><sub>изм_Е4_4</sub> = &ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span><var>δC</var><sub>изм</sub><sup>2</sup> +  ( 2 · <var>δf</var><sub>изм</sub> ) <sup>2</sup></span> = &ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span> ( 1,667 <i>%</i> ) <sup>2</sup> +  ( 2 · 0,001417 <i>%</i> ) <sup>2</sup></span> = 1,667 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔL</var><sub>изм_Е4_4</sub> = <var>δL</var><sub>изм_Е4_4</sub> · <var>L</var><sub>изм_Е4_4</sub> = 1,667 <i>%</i> · 74 <i>мкГн</i> = 1,233×10<sup>-6</sup> <i>H</i></span></p>
+L = (74±1.2)мкГн<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3> Измерить индуктивность катушки косвенным методом на различных частотах, равномерно устанавливая значения емкости кондесатора куметра во всем диапазоне от 25пФ до 450пФ (не менее 15 измерений). </h3>
+<p> извлечение данных из таблицы </p>
+<p>Matrix <span class="eq"><b><var>measured</var></b></span> was successfully read from <a href="file:////home/ilia/MY_FILES/ТУСУР/МиТИ/Лаба2/Измерения.csv">Измерения.csv</a> <small>SEP</small>=',' <small>TYPE</small>=R</p><p><span class="eq"><var><span class="vec">⃗</span>C</var> = <b>col</b> ( <b><var>measured</var></b>; 1 )  · <i>пФ</i> = <b class="b0">[</b>30 <i>пФ</i>  50 <i>пФ</i>  70 <i>пФ</i>  90 <i>пФ</i>  110 <i>пФ</i>  130 <i>пФ</i>  150 <i>пФ</i>  170 <i>пФ</i>  190 <i>пФ</i>  210 <i>пФ</i>  230 <i>пФ</i>  250 <i>пФ</i>  270 <i>пФ</i>  290 <i>пФ</i>  310 <i>пФ</i>  410 <i>пФ</i>  430 <i>пФ</i>  450 <i>пФ</i><b class="b0">]</b></span></p>
+<p><span class="eq"><var><span class="vec">⃗</span>f</var> = <b>col</b> ( <b><var>measured</var></b>; 2 )  · <i>кГц</i> = <b class="b0">[</b>3241 <i>кГц</i>  2636 <i>кГц</i>  2280 <i>кГц</i>  2036 <i>кГц</i>  1844 <i>кГц</i>  1702 <i>кГц</i>  1583 <i>кГц</i>  1486 <i>кГц</i>  1404 <i>кГц</i>  1336 <i>кГц</i>  1279 <i>кГц</i>  1227 <i>кГц</i>  1180 <i>кГц</i>  1140 <i>кГц</i>  1101 <i>кГц</i>  963 <i>кГц</i>  942 <i>кГц</i>  922 <i>кГц</i><b class="b0">]</b></span></p>
+<p><span class="eq"><var>n</var> = <b>n</b><sub>rows</sub> ( <b><var>measured</var></b> )  = 18</span></p>
+<p>&nbsp;</p>
+<p> Расчёт всех значений индуктивностей </p>
+<p> Пример расчёта одного значения </p>
+<p><span class="eq"><var>L</var><sub>1</sub> = <span class="dvc">1<span class="dvl"></span>4 · <var>π</var><sup>2</sup> · <var><span class="vec">⃗</span>f</var><sub>1</sub><sup>2</sup> · <var><span class="vec">⃗</span>C</var><sub>1</sub></span> = <span class="dvc">1<span class="dvl"></span>4 · 3,142<sup>2</sup> · 3241 <i>кГц</i><sup>2</sup> · 30 <i>пФ</i></span> = 80,382 <i>мкГн</i></span></p>
+<p>&nbsp;</p>
+<p> Расчёт всех значений индуктивностей </p>
+<p><span class="eq"><var><span class="vec">⃗</span>L</var><sub>i</sub> = <span class="dvc">1<span class="dvl"></span>4 · <var>π</var><sup>2</sup> · <var><span class="vec">⃗</span>f</var><sup><small class="nth">⊙</small> 2</sup><small class="nth">⊙</small><var><span class="vec">⃗</span>C</var></span> = <span class="dvc">1<span class="dvl"></span>4 · 3,142<sup>2</sup> · <var><span class="vec">⃗</span>f</var><sup><small class="nth">⊙</small> 2</sup><small class="nth">⊙</small><var><span class="vec">⃗</span>C</var></span> = <b class="b0">[</b>80,382 <i>мкГн</i>  72,909 <i>мкГн</i>  69,61 <i>мкГн</i>  67,896 <i>мкГн</i>  67,721 <i>мкГн</i>  67,263 <i>мкГн</i>  67,389 <i>мкГн</i>  67,477 <i>мкГн</i>  67,632 <i>мкГн</i>  67,578 <i>мкГн</i>  67,324 <i>мкГн</i>  67,299 <i>мкГн</i>  67,377 <i>мкГн</i>  67,21 <i>мкГн</i>  67,407 <i>мкГн</i>  66,62 <i>мкГн</i>  66,385 <i>мкГн</i>  66,216 <i>мкГн</i><b class="b0">]</b></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>0_1_5</sub> = <span class="dvc"><var>C</var><sub>1</sub> − <var>C</var><sub>5</sub> · <span class="b1">(</span><span class="dvc"><var>f</var><sub>5</sub><span class="dvl"></span><var>f</var><sub>1</sub></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc"><var>f</var><sub>5</sub><span class="dvl"></span><var>f</var><sub>1</sub></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = <span class="dvc">30 <i>пФ</i> − 110 <i>пФ</i> · <span class="b1">(</span><span class="dvc">1844 <i>кГц</i><span class="dvl"></span>3241 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc">1844 <i>кГц</i><span class="dvl"></span>3241 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = 8,293 <i>пФ</i></span></p>
+<p><span class="eq"><var>C</var><sub>0_5_13</sub> = <span class="dvc"><var>C</var><sub>5</sub> − <var>C</var><sub>13</sub> · <span class="b1">(</span><span class="dvc"><var>f</var><sub>13</sub><span class="dvl"></span><var>f</var><sub>5</sub></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc"><var>f</var><sub>13</sub><span class="dvl"></span><var>f</var><sub>5</sub></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = <span class="dvc">110 <i>пФ</i> − 270 <i>пФ</i> · <span class="b1">(</span><span class="dvc">1180 <i>кГц</i><span class="dvl"></span>1844 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc">1180 <i>кГц</i><span class="dvl"></span>1844 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = 0,9517 <i>пФ</i></span></p>
+<p><span class="eq"><var>C</var><sub>0_13_18</sub> = <span class="dvc"><var>C</var><sub>13</sub> − <var>C</var><sub>18</sub> · <span class="b1">(</span><span class="dvc"><var>f</var><sub>18</sub><span class="dvl"></span><var>f</var><sub>13</sub></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc"><var>f</var><sub>18</sub><span class="dvl"></span><var>f</var><sub>13</sub></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = <span class="dvc">270 <i>пФ</i> − 450 <i>пФ</i> · <span class="b1">(</span><span class="dvc">922 <i>кГц</i><span class="dvl"></span>1180 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup><span class="dvl"></span><span class="b1">(</span><span class="dvc">922 <i>кГц</i><span class="dvl"></span>1180 <i>кГц</i></span><span class="b1">)</span><sup class="raised">2</sup> − 1</span> = 12,151 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>0</sub> = <span class="dvc"><var>C</var><sub>0_1_5</sub> + <var>C</var><sub>0_5_13</sub> + <var>C</var><sub>0_13_18</sub><span class="dvl"></span>3</span> = <span class="dvc">8,293 <i>пФ</i> + 0,9517 <i>пФ</i> + 12,151 <i>пФ</i><span class="dvl"></span>3</span> = 7,132 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> Расчёт всех значений индуктивностей, свободных от систематической погрешности </p>
+<p> Пример расчёта одного значения </p>
+<p><span class="eq"><var>L</var><sub>01</sub> = <var>L</var><sub>1</sub> · <span class="dvc"><var><span class="vec">⃗</span>C</var><sub>1</sub><span class="dvl"></span><var><span class="vec">⃗</span>C</var><sub>1</sub> + <var>C</var><sub>0</sub></span> = 80,382 <i>мкГн</i> · <span class="dvc">30 <i>пФ</i><span class="dvl"></span>30 <i>пФ</i> + 7,132 <i>пФ</i></span> = 64,943 <i>мкГн</i></span></p>
+<p>&nbsp;</p>
+<p> Расчёт всех значений индуктивностей </p>
+<p><span class="eq"><var><span class="vec">⃗</span>L</var><sub>0i</sub> = <var><span class="vec">⃗</span>L</var><sub>i</sub><small class="nth">⊙</small><span class="dvc"><var><span class="vec">⃗</span>C</var><span class="dvl"></span><var><span class="vec">⃗</span>C</var> + <var>C</var><sub>0</sub></span> = <var><span class="vec">⃗</span>L</var><sub>i</sub><small class="nth">⊙</small><span class="dvc"><var><span class="vec">⃗</span>C</var><span class="dvl"></span><var><span class="vec">⃗</span>C</var> + 7,132 <i>пФ</i></span> = <b class="b0">[</b>64,943 <i>мкГн</i>  63,807 <i>мкГн</i>  63,174 <i>мкГн</i>  62,91 <i>мкГн</i>  63,598 <i>мкГн</i>  63,765 <i>мкГн</i>  64,33 <i>мкГн</i>  64,76 <i>мкГн</i>  65,185 <i>мкГн</i>  65,359 <i>мкГн</i>  65,299 <i>мкГн</i>  65,433 <i>мкГн</i>  65,643 <i>мкГн</i>  65,597 <i>мкГн</i>  65,891 <i>мкГн</i>  65,481 <i>мкГн</i>  65,302 <i>мкГн</i>  65,183 <i>мкГн</i><b class="b0">]</b></span></p>
+<p>&nbsp;</p>
+<p> Данные для таблицы 8.1 </p>
+<table border="1px" style="border-collapse: collapse; text-align: center;">  <tr>    <th>С, пФ</th>    <th>f, кГц</th>    <th>L_i, мкГн</th>    <th>L_0i, мкГн</th>  </tr>  <tr>    <td>30</td>    <td>3241</td>    <td>80.382</td>    <td>64.943</td>  </tr>  <tr>    <td>50</td>    <td>2636</td>    <td>72.909</td>    <td>63.807</td>  </tr>  <tr>    <td>70</td>    <td>2280</td>    <td>69.61</td>    <td>63.174</td>  </tr>  <tr>    <td>90</td>    <td>2036</td>    <td>67.896</td>    <td>62.91</td>  </tr>  <tr>    <td>110</td>    <td>1844</td>    <td>67.721</td>    <td>63.598</td>  </tr>  <tr>    <td>130</td>    <td>1702</td>    <td>67.263</td>    <td>63.765</td>  </tr>  <tr>    <td>150</td>    <td>1583</td>    <td>67.389</td>    <td>64.33</td>  </tr>  <tr>    <td>170</td>    <td>1486</td>    <td>67.477</td>    <td>64.76</td>  </tr>  <tr>    <td>190</td>    <td>1404</td>    <td>67.632</td>    <td>65.185</td>  </tr>  <tr>    <td>210</td>    <td>1336</td>    <td>67.578</td>    <td>65.359</td>  </tr>  <tr>    <td>230</td>    <td>1279</td>    <td>67.324</td>    <td>65.299</td>  </tr>  <tr>    <td>250</td>    <td>1227</td>    <td>67.299</td>    <td>65.433</td>  </tr>  <tr>    <td>270</td>    <td>1180</td>    <td>67.377</td>    <td>65.643</td>  </tr>  <tr>    <td>290</td>    <td>1140</td>    <td>67.21</td>    <td>65.597</td>  </tr>  <tr>    <td>310</td>    <td>1101</td>    <td>67.407</td>    <td>65.891</td>  </tr>  <tr>    <td>410</td>    <td>963</td>    <td>66.62</td>    <td>65.481</td>  </tr>  <tr>    <td>430</td>    <td>942</td>    <td>66.385</td>    <td>65.302</td>  </tr>  <tr>    <td>450</td>    <td>922</td>    <td>66.216</td>    <td>65.183</td>  </tr></table><p>&nbsp;</p>
+<p> Рассчитали среднее арифметическое </p>
+<p><span class="eq"><var>L</var><sub>ср</sub> = <b>average</b> ( <var><span class="vec">⃗</span>L</var><sub>0i</sub> )  = 64,759 <i>мкГн</i></span></p>
+<p>&nbsp;</p>
+<p> Вычисляется оценка среднеквадратического отклонения результата измерения S_Lср от истинного значения измеряемой величины (среднеквадратическое отклонение среднего) </p>
+<p>&nbsp;</p>
+<p> Промежуточный расчёт нужно вырезать, а то это дичь какая-то </p>
+<p><span class="eq"><var>S</var><sub>Lср</sub> = &emsp;&thinsp;<span class="o2"><span class="r2"></span><span class="dvc down"><span class="dvc up"><span class="dvr"><small><var>n</var></small><span class="nary">∑</span><small><var>i</var>&hairsp;=&hairsp;1</small></span> ( <var><span class="vec">⃗</span>L</var><sub>0i.<var>i</var></sub> − <var>L</var><sub>ср</sub> ) <sup>2</sup><span class="dvl"></span><var>n</var> ·  ( <var>n</var> − 1 ) </span></span></span> = &ensp;&ensp;<span class="o1"><span class="r1"></span><span class="dvc">14,439 <i>mg</i><sup class="unit">2</sup><i> · </i><i>m</i><sup class="unit">4</sup><i class="unit"> ∕ </i><i>s</i><sup class="unit">4</sup><i class="unit"> ∕ </i><i>A</i><sup class="unit">4</sup><span class="dvl"></span>18 ·  ( 18 − 1 ) </span></span> = 0,2172 <i>мкГн</i></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3> Определяем коэффициент Стьюдента по таблице </h3>
+ <img alt="Таблица не в файле. Не загрузилось — я не виноват." src="http://fevt.ru/_ld/8/32164894.png"> 
+<p>&nbsp;</p>
+<p>Пусть  <span class="eq"><var>P</var><sub>д</sub> = 0,9</span>  тогда для  <span class="eq"><var>n</var> = 18</span>  будет  <span class="eq"><var>t</var><sub>a</sub> = 1,7</span> . </p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔL</var><sub>д</sub> = <var>t</var><sub>a</sub> · <var>S</var><sub>Lср</sub> = 1,7 · 0,2172 <i>мкГн</i> = 0,3693 <i>мкГн</i></span></p>
+<p>&nbsp;</p>
+L = (64.76±0.37)мкГн<p>&nbsp;</p>
+<h3> 6.3. По результатам п. 6.2 вычислить собственную емкость катушки индуктивности (не менее трех вычислений, используя наиболее отличающиеся по величине значения частот) и найти среднее значение. </h3>
+<p>&nbsp;</p>
+<p> Вычислено выше </p>
+<p>&nbsp;</p>
+<h3> 6.4. Измерить емкости конденсаторов (малой и большой емкости) прибором Е9-4 (Е4-4). Оценить точность измерения. </h3>
+<p>&nbsp;</p>
+<p> Измерение малой ёмкости: </p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>1</sub> = 450 <i>пФ</i></span></p>
+<p><span class="eq"><var>C</var><sub>2</sub> = 330 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>м_E4_4</sub> = <var>C</var><sub>1</sub> − <var>C</var><sub>2</sub> = 450 <i>пФ</i> − 330 <i>пФ</i> = 120 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔC</var><sub>1</sub> = <var>ΔC</var><sub>Е4_4</sub>  ( <var>C</var><sub>1</sub> )  = <var>ΔC</var><sub>Е4_4</sub>  ( 450 <i>пФ</i> )  = 4,5 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>2</sub> = <var>ΔC</var><sub>Е4_4</sub>  ( <var>C</var><sub>2</sub> )  = <var>ΔC</var><sub>Е4_4</sub>  ( 330 <i>пФ</i> )  = 3,3 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>δC</var><sub>м_E4_4</sub> = &ensp;&ensp;<span class="o1"><span class="r1"></span><span class="b1">(</span><span class="dvc"><var>ΔC</var><sub>1</sub><span class="dvl"></span><var>C</var><sub>1</sub> − <var>C</var><sub>2</sub></span><span class="b1">)</span><sup class="raised">2</sup> + <span class="b1">(</span><span class="dvc"><var>ΔC</var><sub>2</sub><span class="dvl"></span><var>C</var><sub>1</sub> − <var>C</var><sub>2</sub></span><span class="b1">)</span><sup class="raised">2</sup></span> = &ensp;&ensp;<span class="o1"><span class="r1"></span><span class="b1">(</span><span class="dvc">4,5 <i>пФ</i><span class="dvl"></span>450 <i>пФ</i> − 330 <i>пФ</i></span><span class="b1">)</span><sup class="raised">2</sup> + <span class="b1">(</span><span class="dvc">3,3 <i>пФ</i><span class="dvl"></span>450 <i>пФ</i> − 330 <i>пФ</i></span><span class="b1">)</span><sup class="raised">2</sup></span> = 4,65 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔC</var><sub>м_E4_4</sub> = <var>δC</var><sub>м_E4_4</sub> · <var>C</var><sub>м_E4_4</sub> = 4,65 <i>%</i> · 120 <i>пФ</i> = 5,58 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+C_малое = (120±6)пФ<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> Измерение большой ёмкости </p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>1</sub> = 200 <i>пФ</i></span></p>
+<p><span class="eq"><var>C</var><sub>2</sub> = 244 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔC</var><sub>1</sub> = <var>ΔC</var><sub>Е4_4</sub>  ( <var>C</var><sub>1</sub> )  = <var>ΔC</var><sub>Е4_4</sub>  ( 200 <i>пФ</i> )  = 2 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>2</sub> = <var>ΔC</var><sub>Е4_4</sub>  ( <var>C</var><sub>2</sub> )  = <var>ΔC</var><sub>Е4_4</sub>  ( 244 <i>пФ</i> )  = 2,44 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>б_E4_4</sub> = <span class="dvc down">1<span class="dvl"></span><span class="dvc">1<span class="dvl"></span><var>C</var><sub>1</sub></span> − <span class="dvc">1<span class="dvl"></span><var>C</var><sub>2</sub></span></span> = <span class="dvc down">1<span class="dvl"></span><span class="dvc">1<span class="dvl"></span>200 <i>пФ</i></span> − <span class="dvc">1<span class="dvl"></span>244 <i>пФ</i></span></span> = 1109,091 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>δC</var><sub>б_E4_4</sub> = &ensp;&ensp;<span class="o1"><span class="r1"></span><span class="b1">(</span><span class="dvc"><var>C</var><sub>2</sub><span class="dvl"></span><var>C</var><sub>1</sub> − <var>C</var><sub>2</sub></span> · <span class="dvc"><var>ΔC</var><sub>1</sub><span class="dvl"></span><var>C</var><sub>1</sub></span><span class="b1">)</span><sup class="raised">2</sup> + <span class="b1">(</span><span class="dvc"><var>C</var><sub>1</sub><span class="dvl"></span><var>C</var><sub>1</sub> − <var>C</var><sub>2</sub></span> · <span class="dvc"><var>ΔC</var><sub>2</sub><span class="dvl"></span><var>C</var><sub>2</sub></span><span class="b1">)</span><sup class="raised">2</sup></span> = &ensp;&ensp;<span class="o1"><span class="r1"></span><span class="b1">(</span><span class="dvc">244 <i>пФ</i><span class="dvl"></span>200 <i>пФ</i> − 244 <i>пФ</i></span> · <span class="dvc">2 <i>пФ</i><span class="dvl"></span>200 <i>пФ</i></span><span class="b1">)</span><sup class="raised">2</sup> + <span class="b1">(</span><span class="dvc">200 <i>пФ</i><span class="dvl"></span>200 <i>пФ</i> − 244 <i>пФ</i></span> · <span class="dvc">2,44 <i>пФ</i><span class="dvl"></span>244 <i>пФ</i></span><span class="b1">)</span><sup class="raised">2</sup></span> = 7,17 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>ΔC</var><sub>б_E4_4</sub> = <var>δC</var><sub>б_E4_4</sub> · <var>C</var><sub>б_E4_4</sub> = 7,17 <i>%</i> · 1109,091 <i>пФ</i> = 79,525 <i>пФ</i></span></p>
+<p>&nbsp;</p>
+C_большое = (1110±80)пФ<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3> 6.5. Измерить индуктивность катушки и емкостей конденсаторов методом сравнения с мерой на приборе Е12-1 (Е12-1А). Оценить точность измерения. </h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>м_Е12_1</sub> = 129,96 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>м_Е12_1</sub> = 0,005 · <var>C</var><sub>м_Е12_1</sub> + 0,4 <i>пФ</i> = 0,005 · 129,96 <i>пФ</i> + 0,4 <i>пФ</i> = 1,05 <i>пФ</i></span></p>
+C_м_Е12_1 = (130±1)пФ<p>&nbsp;</p>
+<p><span class="eq"><var>C</var><sub>б_Е12_1</sub> = 1033,32 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>б_Е12_1</sub> = 0,005 · <var>C</var><sub>б_Е12_1</sub> + 0,4 <i>пФ</i> = 0,005 · 1033,32 <i>пФ</i> + 0,4 <i>пФ</i> = 5,567 <i>пФ</i></span></p>
+C_б_Е12_1 = (1033±6)пФ<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>L</var><sub>Е12_1</sub> = 70,904 <i>мкГн</i></span></p>
+<p><span class="eq"><var>ΔL</var><sub>Е12_1</sub> = 0,015 · <var>L</var><sub>Е12_1</sub> + 2 · 0,1 <i>мкГн</i> = 0,015 · 70,904 <i>мкГн</i> + 2 · 0,1 <i>мкГн</i> = 1,264 <i>мкГн</i></span></p>
+L_Е12_1 = (70.9±1.3)мкГн<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3> 6.6. Измерить индуктивность катушки и емкостей конденсаторов на приборе Е7-21. Оценить точность измерения. </h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p> У нас был AM-3125 </p>
+<p> Не помню на какой частоте измеряли. Допустим 10 кГц. </p>
+<p>&nbsp;</p>
+<p> Диапазон 400 пФ </p>
+<p><span class="eq"><var>C</var><sub>м_AM_3125</sub> = 129,9 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>м_AM_3125</sub> = 0,0035 · <var>C</var><sub>м_AM_3125</sub> + 0,03 <i>нФ</i> = 0,0035 · 129,9 <i>пФ</i> + 0,03 <i>нФ</i> = 30,455 <i>пФ</i></span></p>
+C_м_AM_3125= (130±30)пФ<p>&nbsp;</p>
+<p> Диапазон 4 нФ </p>
+<p><span class="eq"><var>C</var><sub>б_AM_3125</sub> = 1031,1 <i>пФ</i></span></p>
+<p><span class="eq"><var>ΔC</var><sub>б_AM_3125</sub> = 0,0025 · <var>C</var><sub>б_AM_3125</sub> + 0,0002 <i>нФ</i> = 0,0025 · 1031,1 <i>пФ</i> + 0,0002 <i>нФ</i> = 2,778 <i>пФ</i></span></p>
+C_б_AM_3125= (1031.1±2.8)пФ<p>&nbsp;</p>
+<p> Диапазон 400 мкГн </p>
+<p><span class="eq"><var>L</var><sub>AM_3125</sub> = 71 <i>мкГн</i></span></p>
+<p><span class="eq"><var>ΔL</var><sub>AM_3125</sub> = 0,0045 · <var>L</var><sub>AM_3125</sub> + 0,02 <i>мкГн</i> = 0,0045 · 71 <i>мкГн</i> + 0,02 <i>мкГн</i> = 0,3395 <i>мкГн</i></span></p>
+L_AM_3125 = (71±0.34)мкГн<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3> 6.7. Результаты измерений с указанием погрешностей, выполненных по правилам метрологии внести в таблицу 6.1. </h3>
+<p>&nbsp;</p>
+<table border="1px">    <tr>        <th rowspan=2>Параметр</th>        <th colspan=2>Прибор Е9-4</th>        <th rowspan=2>Прибор Е12-1</th>        <th rowspan=2>Прибор AM-3125</th>    </tr>    <tr>        <th>Метод непосредственного отсчёта</th>        <th>Косвенный метод</th>    </tr>    <tr>        <td>Индуктивность</td>        <td>(74±1.2)</td>        <td>(64.76±0.37)</td>        <td>(70.9±1.3)</td>        <td>(71±0.34)</td>    </tr>    <tr>        <td>Большая ёмкость</td>        <td colspan=2>(1110±80)</td>        <td>(1033±6)</td>        <td>(1031.1±2.8)</td>    </tr>    <tr>        <td>Малая ёмкость</td>        <td colspan=2>(120±6)</td>        <td>(130±1)</td>        <td>(130±30)</td>    </tr></table><p>&nbsp;</p>
+ </body></html>
