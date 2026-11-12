@@ -1174,10 +1174,6 @@
     </script><style> body { max-width: initial } </style> 
 <h3> ИДЗ-4: Проектирование линейного усилителя на ОУ </h3>
 <p>&nbsp;</p>
-<p> Исходная схема </p>
-<p>&nbsp;</p>
-<p><span class="eq"><var>dB</var> ( <var>x</var> )  = 20 · <b>log</b> ( <b class="b0">|</b>&hairsp;<var>x</var>&hairsp;<b class="b0">|</b> ) </span></p>
-<p>&nbsp;</p>
 <h3> Дано </h3>
 <p> Для варианта 5: </p>
 <p>&nbsp;</p>
@@ -1192,9 +1188,12 @@
 <p><span class="eq"><var>Q</var> = 100</span></p>
 <p><span class="eq"><var>T</var> = <var>Q</var> · <var>t</var><sub>и</sub> = 100 · 500 <i>мкс</i> = 50 <i>мс</i></span></p>
 <p>&nbsp;</p>
-<h3> Предварительные расчёты для моделирования </h3>
-<p><span class="eq"><var>U</var><sub>m_вых</sub> = <var>E</var><sub>ип</sub> − 1,5 <i>В</i> = 15 <i>В</i> − 1,5 <i>В</i> = 13,5 <i>В</i></span></p>
-<p><span class="eq"><var>U</var><sub>m_вх</sub> = <span class="dvc"><var>U</var><sub>m_вых</sub><span class="dvl"></span><var>K</var><sub>u</sub></span> = <span class="dvc">13,5 <i>В</i><span class="dvl"></span>7000</span> = 1,929 <i>мВ</i></span></p>
+<h3> Расчёт усилителя </h3>
+<p>&nbsp;</p>
+<p> Неизвестна частота единичного усиления операционного усилителя. Для практических расчётов был взят ОУ LF347-N, который имеет следующие характеристики: </p>
+<p><span class="eq"><var>f</var><sub>01</sub> = 4 <i>МГц</i></span></p>
+<p> Тогда коэффициент усиления одного каскада не должен превышать </p>
+<p><span class="eq"><var>K</var><sub>u_каскада_max</sub> = <span class="dvc"><var>f</var><sub>01</sub><span class="dvl"></span><var>f</var><sub>в</sub></span> = <span class="dvc">4 <i>МГц</i><span class="dvl"></span>20 <i>кГц</i></span> = 200</span></p>
 <p>Пусть будет двухкаскадная схема с  <span class="eq"><var>K</var><sub>u1</sub> = 100</span>  тогда </p>
 <p><span class="eq"><var>K</var><sub>u2</sub> = <span class="dvc"><var>K</var><sub>u</sub><span class="dvl"></span><var>K</var><sub>u1</sub></span> = <span class="dvc">7000<span class="dvl"></span>100</span> = 70</span></p>
 <p>&nbsp;</p>
@@ -1204,14 +1203,24 @@
 <p><span class="eq"><var>R</var><sub>4</sub> = 10 <i>кОм</i></span></p>
 <p><span class="eq"><var>R</var><sub>3</sub> =  ( <var>K</var><sub>u2</sub> − 1 )  · <var>R</var><sub>4</sub> =  ( 70 − 1 )  · 10 <i>кОм</i> = 690 <i>кОм</i></span></p>
 <p>&nbsp;</p>
+<p> Т.к. задано  <span class="eq"><var>f</var><sub>н</sub> = 0,1 <i>кГц</i></span> , то чтобы напряжение смещения не влияло на схему, можно избавиться от постоянной составляющей усилителя. </p>
+<p><span class="eq"><var>R</var><sub>5</sub> = 100 <i>кОм</i></span></p>
+<p><span class="eq"><var>C</var><sub>1</sub> = <span class="dvc">&ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span>1</span><span class="dvl"></span>2 · <var>π</var> · <var>f</var><sub>н</sub> · <var>R</var><sub>5</sub></span> = <span class="dvc">&ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span>1</span><span class="dvl"></span>2 · 3,142 · 0,1 <i>кГц</i> · 100 <i>кОм</i></span> = 15,915 <i>нФ</i></span></p>
+<p>&nbsp;</p>
+<h3> Предварительные расчёты для моделирования и проверки </h3>
+<p><span class="eq"><var>U</var><sub>m_вых</sub> = <var>E</var><sub>ип</sub> − 1,5 <i>В</i> = 15 <i>В</i> − 1,5 <i>В</i> = 13,5 <i>В</i></span></p>
+<p><span class="eq"><var>U</var><sub>m_вх</sub> = <span class="dvc"><var>U</var><sub>m_вых</sub><span class="dvl"></span><var>K</var><sub>u</sub></span> = <span class="dvc">13,5 <i>В</i><span class="dvl"></span>7000</span> = 1,929 <i>мВ</i></span></p>
+<p><span class="eq"><var>dB</var>  ( <var>K</var><sub>u</sub> )  = <var>dB</var>  ( 7000 )  = 76,902</span></p>
+<p><span class="eq"><var>dB</var>  ( <var>K</var><sub>u1</sub> )  = <var>dB</var>  ( 100 )  = 40</span></p>
+<p><span class="eq"><var>dB</var>  ( <var>K</var><sub>u2</sub> )  = <var>dB</var>  ( 70 )  = 36,902</span></p>
 <p>&nbsp;</p>
 <h3> 3. </h3>
 <p><span class="eq"><var>t</var><sub>ф</sub> = 1 <i>мс</i></span></p>
 <p>&nbsp;</p>
 <p><span class="eq"><var>f</var><sub>в_моделирования</sub> = <span class="dvc">0,35<span class="dvl"></span><var>t</var><sub>ф</sub></span> = <span class="dvc">0,35<span class="dvl"></span>1 <i>мс</i></span> = 0,35 <i>кГц</i></span></p>
-<p><span class="err">Error in "f_н_моделирования = ln(U_m_вых_нач/U_m_вых_кон) / 2 * π * t_и" on line [<a href="#0" data-text="56">56</a>]: Undefined variable or units: "U_m_вых_нач".</span></p>
+<p><span class="err">Error in "f_н_моделирования = ln(U_m_вых_нач/U_m_вых_кон) / 2 * π * t_и" on line [<a href="#0" data-text="67">67</a>]: Undefined variable or units: "U_m_вых_нач".</span></p>
 <p>&nbsp;</p>
-<p><span class="err">Error in "D = U_m_вых_нач/t_ф |В/с" on line [<a href="#0" data-text="58">58</a>]: Invalid units: "с".</span></p>
+<p><span class="err">Error in "D = U_m_вых_нач/t_ф |В/с" on line [<a href="#0" data-text="69">69</a>]: Invalid units: "с".</span></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
