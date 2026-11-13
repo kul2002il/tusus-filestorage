@@ -1198,14 +1198,16 @@
 <p><span class="eq"><var>K</var><sub>u2</sub> = <span class="dvc"><var>K</var><sub>u</sub><span class="dvl"></span><var>K</var><sub>u1</sub></span> = <span class="dvc">7000<span class="dvl"></span>100</span> = 70</span></p>
 <p>&nbsp;</p>
 <p>Сопротивления двух неинвертирующих усилителей </p>
-<p><span class="eq"><var>R</var><sub>2</sub> = 10 <i>кОм</i></span></p>
-<p><span class="eq"><var>R</var><sub>1</sub> =  ( <var>K</var><sub>u1</sub> − 1 )  · <var>R</var><sub>2</sub> =  ( 100 − 1 )  · 10 <i>кОм</i> = 990 <i>кОм</i></span></p>
-<p><span class="eq"><var>R</var><sub>4</sub> = 10 <i>кОм</i></span></p>
-<p><span class="eq"><var>R</var><sub>3</sub> =  ( <var>K</var><sub>u2</sub> − 1 )  · <var>R</var><sub>4</sub> =  ( 70 − 1 )  · 10 <i>кОм</i> = 690 <i>кОм</i></span></p>
+<p><span class="eq"><var>R</var><sub>b1</sub> = 10 <i>кОм</i></span></p>
+<p><span class="eq"><var>R</var><sub>t1</sub> =  ( <var>K</var><sub>u1</sub> − 1 )  · <var>R</var><sub>b1</sub> =  ( 100 − 1 )  · 10 <i>кОм</i> = 990 <i>кОм</i></span></p>
+<p><span class="eq"><var>R</var><sub>b2</sub> = 10 <i>кОм</i></span></p>
+<p><span class="eq"><var>R</var><sub>t2</sub> =  ( <var>K</var><sub>u2</sub> − 1 )  · <var>R</var><sub>b2</sub> =  ( 70 − 1 )  · 10 <i>кОм</i> = 690 <i>кОм</i></span></p>
+<p> Частота ограничена сверху  <span class="eq"><var>f</var><sub>в</sub> = 20 <i>кГц</i></span> , необходима корректировка верхней граничной частоты. </p>
+<p><span class="eq"><var>С</var><sub>2</sub> = <span class="dvc">1<span class="dvl"></span>2 · <var>π</var> · <var>f</var><sub>в</sub> · <var>R</var><sub>t1</sub></span> = <span class="dvc">1<span class="dvl"></span>2 · 3,142 · 20 <i>кГц</i> · 990 <i>кОм</i></span> = 8,038 <i>пФ</i></span></p>
 <p>&nbsp;</p>
 <p> Т.к. задано  <span class="eq"><var>f</var><sub>н</sub> = 0,1 <i>кГц</i></span> , то чтобы напряжение смещения не влияло на схему, можно избавиться от постоянной составляющей усилителя. </p>
-<p><span class="eq"><var>R</var><sub>5</sub> = 100 <i>кОм</i></span></p>
-<p><span class="eq"><var>C</var><sub>1</sub> = <span class="dvc">&ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span>1</span><span class="dvl"></span>2 · <var>π</var> · <var>f</var><sub>н</sub> · <var>R</var><sub>5</sub></span> = <span class="dvc">&ensp;&hairsp;&hairsp;<span class="o0"><span class="r">√</span>1</span><span class="dvl"></span>2 · 3,142 · 0,1 <i>кГц</i> · 100 <i>кОм</i></span> = 15,915 <i>нФ</i></span></p>
+<p><span class="eq"><var>R</var><sub>hpf1</sub> = 100 <i>кОм</i></span></p>
+<p><span class="eq"><var>C</var><sub>hpf1</sub> = <span class="dvc">1<span class="dvl"></span>2 · <var>π</var> · <var>f</var><sub>н</sub> · <var>R</var><sub>hpf1</sub></span> = <span class="dvc">1<span class="dvl"></span>2 · 3,142 · 0,1 <i>кГц</i> · 100 <i>кОм</i></span> = 15,915 <i>нФ</i></span></p>
 <p>&nbsp;</p>
 <h3> Предварительные расчёты для моделирования и проверки </h3>
 <p><span class="eq"><var>U</var><sub>m_вых</sub> = <var>E</var><sub>ип</sub> − 1,5 <i>В</i> = 15 <i>В</i> − 1,5 <i>В</i> = 13,5 <i>В</i></span></p>
@@ -1214,14 +1216,56 @@
 <p><span class="eq"><var>dB</var>  ( <var>K</var><sub>u1</sub> )  = <var>dB</var>  ( 100 )  = 40</span></p>
 <p><span class="eq"><var>dB</var>  ( <var>K</var><sub>u2</sub> )  = <var>dB</var>  ( 70 )  = 36,902</span></p>
 <p>&nbsp;</p>
-<h3> 3. </h3>
-<p><span class="eq"><var>t</var><sub>ф</sub> = 1 <i>мс</i></span></p>
+<p><span class="eq"><var>dBK</var><sub>u_моделирования</sub> = 76,8</span></p>
+<p><span class="eq"><var>K</var><sub>u_моделирования</sub> = 10<sup><span class="dvc"><var>dBK</var><sub>u_моделирования</sub><span class="dvl"></span>20</span></sup> = 10<sup><span class="dvc">76,8<span class="dvl"></span>20</span></sup> = 6918,31</span></p>
+<p><span class="eq"><var>ΔK</var><sub>u</sub> = <b class="b0">|</b>&hairsp;<var>K</var><sub>u_моделирования</sub> − <var>K</var><sub>u</sub>&hairsp;<b class="b0">|</b> = <b class="b0">|</b>&hairsp;6918,31 − 7000&hairsp;<b class="b0">|</b> = 81,69</span></p>
+<p><span class="eq"><var>δK</var><sub>u</sub> = <span class="dvc"><var>ΔK</var><sub>u</sub><span class="dvl"></span><var>K</var><sub>u</sub></span> = <span class="dvc">81,69<span class="dvl"></span>7000</span> = 1,167 <i>%</i></span></p>
 <p>&nbsp;</p>
-<p><span class="eq"><var>f</var><sub>в_моделирования</sub> = <span class="dvc">0,35<span class="dvl"></span><var>t</var><sub>ф</sub></span> = <span class="dvc">0,35<span class="dvl"></span>1 <i>мс</i></span> = 0,35 <i>кГц</i></span></p>
-<p><span class="err">Error in "f_н_моделирования = ln(U_m_вых_нач/U_m_вых_кон) / 2 * π * t_и" on line [<a href="#0" data-text="67">67</a>]: Undefined variable or units: "U_m_вых_нач".</span></p>
+<p><span class="eq"><var>K</var><sub>u_моделирования</sub> = 6918,31</span></p>
+<p><span class="eq"><var>ΔK</var><sub>u</sub> = 81,69</span></p>
+<p><span class="eq"><var>δK</var><sub>u</sub> = 1,167 <i>%</i></span></p>
 <p>&nbsp;</p>
-<p><span class="err">Error in "D = U_m_вых_нач/t_ф |В/с" on line [<a href="#0" data-text="69">69</a>]: Invalid units: "с".</span></p>
+<h3> 2. Снять АЧХ усилителя. Определить нижнюю и верхнюю граничные частоты. </h3>
+<p><span class="eq"><var>f</var><sub>моделирования_н</sub> = 98,8 <i>Гц</i></span></p>
+<p><span class="eq"><var>f</var><sub>моделирования_в</sub> = 19,6 <i>кГц</i></span></p>
 <p>&nbsp;</p>
+<p><span class="eq"><var>Δf</var><sub>н</sub> = <b class="b0">|</b>&hairsp;<var>f</var><sub>моделирования_н</sub> − <var>f</var><sub>н</sub>&hairsp;<b class="b0">|</b> = <b class="b0">|</b>&hairsp;98,8 <i>Гц</i> − 0,1 <i>кГц</i>&hairsp;<b class="b0">|</b> = 0,0012 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>н</sub> = <span class="dvc"><var>Δf</var><sub>н</sub><span class="dvl"></span><var>f</var><sub>н</sub></span> = <span class="dvc">0,0012 <i>кГц</i><span class="dvl"></span>0,1 <i>кГц</i></span> = 1,2 <i>%</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>в</sub> = <b class="b0">|</b>&hairsp;<var>f</var><sub>моделирования_в</sub> − <var>f</var><sub>в</sub>&hairsp;<b class="b0">|</b> = <b class="b0">|</b>&hairsp;19,6 <i>кГц</i> − 20 <i>кГц</i>&hairsp;<b class="b0">|</b> = 0,4 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>в</sub> = <span class="dvc"><var>Δf</var><sub>в</sub><span class="dvl"></span><var>f</var><sub>в</sub></span> = <span class="dvc">0,4 <i>кГц</i><span class="dvl"></span>20 <i>кГц</i></span> = 2 <i>%</i></span></p>
 <p>&nbsp;</p>
+<p><span class="eq"><var>f</var><sub>моделирования_н</sub> = 98,8 <i>Гц</i></span></p>
+<p><span class="eq"><var>f</var><sub>моделирования_в</sub> = 19,6 <i>кГц</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>н</sub> = 0,0012 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>н</sub> = 1,2 <i>%</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>в</sub> = 0,4 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>в</sub> = 2 <i>%</i></span></p>
+<p>&nbsp;</p>
+<h3> 3. По импульсному сигналу на выходе усилителя определить нижнюю и верхнюю граничные частоты полосы усиления сигналов. </h3>
+<p><span class="eq"><var>t</var><sub>ф</sub> = 18,2 <i>мкс</i></span></p>
+<p><span class="eq"><var>f</var><sub>моделирования_в</sub> = <span class="dvc">0,35<span class="dvl"></span><var>t</var><sub>ф</sub></span> = <span class="dvc">0,35<span class="dvl"></span>18,2 <i>мкс</i></span> = 19,231 <i>кГц</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>U</var><sub>m_вых_нач</sub> = 12,9 <i>В</i></span></p>
+<p><span class="eq"><var>U</var><sub>m_вых_кон</sub> = 9,59 <i>В</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>f</var><sub>моделирования_н</sub> = <span class="dvc up"><b>ln</b><span class="b1">(</span><span class="dvc"><var>U</var><sub>m_вых_нач</sub><span class="dvl"></span><var>U</var><sub>m_вых_кон</sub></span><span class="b1">)</span><span class="dvl"></span>2 · <var>π</var> · <var>t</var><sub>и</sub></span> = <span class="dvc up"><b>ln</b><span class="b1">(</span><span class="dvc">12,9 <i>В</i><span class="dvl"></span>9,59 <i>В</i></span><span class="b1">)</span><span class="dvl"></span>2 · 3,142 · 500 <i>мкс</i></span> = 94,381 <i>Гц</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>Δf</var><sub>н</sub> = <b class="b0">|</b>&hairsp;<var>f</var><sub>моделирования_н</sub> − <var>f</var><sub>н</sub>&hairsp;<b class="b0">|</b> = <b class="b0">|</b>&hairsp;94,381 <i>Гц</i> − 0,1 <i>кГц</i>&hairsp;<b class="b0">|</b> = 5,619 <i>Гц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>н</sub> = <span class="dvc"><var>Δf</var><sub>н</sub><span class="dvl"></span><var>f</var><sub>н</sub></span> = <span class="dvc">5,619 <i>Гц</i><span class="dvl"></span>0,1 <i>кГц</i></span> = 5,619 <i>%</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>в</sub> = <b class="b0">|</b>&hairsp;<var>f</var><sub>моделирования_в</sub> − <var>f</var><sub>в</sub>&hairsp;<b class="b0">|</b> = <b class="b0">|</b>&hairsp;19,231 <i>кГц</i> − 20 <i>кГц</i>&hairsp;<b class="b0">|</b> = 0,7692 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>в</sub> = <span class="dvc"><var>Δf</var><sub>в</sub><span class="dvl"></span><var>f</var><sub>в</sub></span> = <span class="dvc">0,7692 <i>кГц</i><span class="dvl"></span>20 <i>кГц</i></span> = 3,846 <i>%</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>f</var><sub>моделирования_н</sub> = 94,381 <i>Гц</i></span></p>
+<p><span class="eq"><var>f</var><sub>моделирования_в</sub> = 19,231 <i>кГц</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>н</sub> = 5,619 <i>Гц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>н</sub> = 5,619 <i>%</i></span></p>
+<p><span class="eq"><var>Δf</var><sub>в</sub> = 0,7692 <i>кГц</i></span></p>
+<p><span class="eq"><var>δf</var><sub>в</sub> = 3,846 <i>%</i></span></p>
+<p>&nbsp;</p>
+<h3> 4. По импульсному сигналу определить скорость нарастания выходного сигнала. </h3>
+<p><span class="eq"><var>ΔU</var><sub>ф</sub> = 10,8 <i>В</i></span></p>
+<p><span class="eq"><var>D</var> = <span class="dvc"><var>ΔU</var><sub>ф</sub><span class="dvl"></span><var>t</var><sub>ф</sub></span> = <span class="dvc">10,8 <i>В</i><span class="dvl"></span>18,2 <i>мкс</i></span> = 593406,6 <i>В</i><i class="unit"> ∕ </i><i>с</i></span></p>
+<p>&nbsp;</p>
+<p><span class="eq"><var>D</var> = 593406,6 <i>В</i><i class="unit"> ∕ </i><i>с</i></span></p>
 <p>&nbsp;</p>
  </body></html>

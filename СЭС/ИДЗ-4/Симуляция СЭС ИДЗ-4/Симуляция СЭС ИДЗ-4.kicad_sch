@@ -1583,6 +1583,12 @@
 		(color 0 0 0 0)
 		(uuid "cf82dda7-37c7-4e8c-afd9-98e7c4b19e6c")
 	)
+	(junction
+		(at 130.81 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebc4ab4d-e170-4e3f-8a1f-b50aab14061e")
+	)
 	(wire
 		(pts
 			(xy 267.97 144.78) (xy 267.97 146.05)
@@ -1605,7 +1611,27 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 63.5) (xy 181.61 66.04)
+			(xy 130.81 78.74) (xy 121.92 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11af06c4-5635-46d2-84f1-195601cc7f9d")
+	)
+	(wire
+		(pts
+			(xy 130.81 74.93) (xy 130.81 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b9022b7-91c5-4e79-8f85-0fafecc3c409")
+	)
+	(wire
+		(pts
+			(xy 181.61 63.5) (xy 181.61 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1695,7 +1721,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 63.5) (xy 203.2 63.5)
+			(xy 181.61 63.5) (xy 190.5 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1745,7 +1771,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 63.5) (xy 121.92 66.04)
+			(xy 121.92 63.5) (xy 121.92 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1765,7 +1791,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 177.8) (xy 59.69 177.8)
+			(xy 116.84 177.8) (xy 107.95 177.8)
 		)
 		(stroke
 			(width 0)
@@ -1805,7 +1831,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 73.66) (xy 121.92 78.74)
+			(xy 121.92 74.93) (xy 121.92 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1815,7 +1841,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 60.96) (xy 102.87 60.96)
+			(xy 130.81 63.5) (xy 130.81 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dac0209a-3b4e-4465-9b49-1f3905851d90")
+	)
+	(wire
+		(pts
+			(xy 95.25 60.96) (xy 102.87 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1825,13 +1861,23 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 60.96) (xy 137.16 60.96)
+			(xy 130.81 60.96) (xy 137.16 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f22f86f8-874a-4a5b-b0bb-ca06507a83dd")
+	)
+	(wire
+		(pts
+			(xy 130.81 63.5) (xy 121.92 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f403ab8a-ee49-4176-a78f-fde94b8c275b")
 	)
 	(wire
 		(pts
@@ -1845,7 +1891,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 73.66) (xy 181.61 78.74)
+			(xy 181.61 74.93) (xy 181.61 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1855,7 +1901,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 60.96) (xy 121.92 63.5)
+			(xy 130.81 60.96) (xy 130.81 63.5)
 		)
 		(stroke
 			(width 0)
@@ -1874,7 +1920,7 @@
 		(uuid "1af2ed22-41de-421a-9edf-94145c94b5e4")
 	)
 	(label "input"
-		(at 93.98 60.96 0)
+		(at 95.25 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1884,7 +1930,7 @@
 		(uuid "43206ea6-3612-4bba-a6c1-bb3b8ff3d9f7")
 	)
 	(label "input"
-		(at 68.58 177.8 180)
+		(at 116.84 177.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1894,17 +1940,17 @@
 		(uuid "7a3876b4-458b-436a-9554-b848ff20a548")
 	)
 	(label "output"
-		(at 203.2 63.5 0)
+		(at 190.5 63.5 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "8b68dcb4-873f-43b5-9e09-2045df32d7dd")
 	)
 	(label "out1"
-		(at 121.92 60.96 0)
+		(at 130.81 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1925,7 +1971,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08be0f91-ee36-4591-95a7-5be5f7ed12a3")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR09"
 			(at 167.64 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -1985,7 +2031,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR07")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -2109,7 +2155,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 181.61 69.85 180)
+		(at 181.61 71.12 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2119,8 +2165,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "148954ce-ee26-4558-863c-7dd44e6738a7")
-		(property "Reference" "R1"
-			(at 184.15 68.5799 0)
+		(property "Reference" "R_t2"
+			(at 184.15 69.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2131,7 +2177,7 @@
 			)
 		)
 		(property "Value" "690k"
-			(at 184.15 71.1199 0)
+			(at 184.15 72.3899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2142,7 +2188,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 183.388 69.85 90)
+			(at 183.388 71.12 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2153,7 +2199,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 181.61 69.85 0)
+			(at 181.61 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2164,7 +2210,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 181.61 69.85 0)
+			(at 181.61 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2183,7 +2229,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "R1")
+					(reference "R_t2")
 					(unit 1)
 				)
 			)
@@ -2201,7 +2247,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a7817b1-2834-49b8-90bb-4ea013c22f69")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR02"
 			(at 59.69 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -2214,7 +2260,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 59.69 191.77 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2262,7 +2307,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR03")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -2280,7 +2325,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b42e26a-94dc-444f-a5fb-846212937939")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR03"
 			(at 107.95 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -2340,7 +2385,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR01")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -2358,7 +2403,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "31018989-8284-47cc-91c5-dbf3d96ae02d")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR013"
 			(at 273.05 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -2418,7 +2463,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR011")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -2564,7 +2609,7 @@
 		(fields_autoplaced yes)
 		(uuid "3ce13c18-72f1-4ba7-b908-75e9d37bfcb4")
 		(property "Reference" "V1"
-			(at 63.5 180.2101 0)
+			(at 63.5 180.3127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2575,7 +2620,7 @@
 			)
 		)
 		(property "Value" "VSIN"
-			(at 63.5 182.7501 0)
+			(at 63.5 182.8527 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2629,8 +2674,8 @@
 				)
 			)
 		)
-		(property "Sim.Params" "dc=0 ampl=2m f=1k ac=1m"
-			(at 63.5 185.2901 0)
+		(property "Sim.Params" "dc=0 ampl=1.8m f=1k ac=1m"
+			(at 63.5 185.3927 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2690,7 +2735,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e4b23e6-4ff2-43b2-82b2-0d9a1e7ad9d5")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR012"
 			(at 273.05 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -2750,7 +2795,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR010")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -2768,7 +2813,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "531a0e66-9b3a-4750-a77b-92117a174846")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR010"
 			(at 181.61 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -2781,7 +2826,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 181.61 91.44 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2829,7 +2873,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR08")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -2847,7 +2891,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "61f45088-58e0-424d-9c1e-f20d2a878844")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR08"
 			(at 167.64 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -2907,7 +2951,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR06")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2935,9 +2979,8 @@
 				)
 			)
 		)
-		(property "Value" "${SIM.PARAMS}"
+		(property "Value" ""
 			(at 177.8 61.0035 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3060,8 +3103,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 121.92 69.85 180)
+		(lib_id "Device:C")
+		(at 140.97 60.96 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3070,31 +3113,29 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8da03e07-56e5-4d78-8bb9-9510e8e12e4d")
-		(property "Reference" "R3"
-			(at 124.46 68.5799 0)
+		(uuid "8d4acd9f-748d-4ec8-894d-8e37929554e5")
+		(property "Reference" "C_hpf1"
+			(at 140.97 53.34 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
-		(property "Value" "990k"
-			(at 124.46 71.1199 0)
+		(property "Value" "16n"
+			(at 140.97 55.88 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 123.698 69.85 90)
+			(at 137.16 61.9252 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3105,7 +3146,89 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 69.85 0)
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9441c3ef-2aa4-4989-a742-31f33fa5664e")
+		)
+		(pin "2"
+			(uuid "f00f253a-7d2a-46ef-960c-c4f114d3b767")
+		)
+		(instances
+			(project "Симуляция СЭС ИДЗ-4"
+				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
+					(reference "C_hpf1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 71.12 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8da03e07-56e5-4d78-8bb9-9510e8e12e4d")
+		(property "Reference" "R_t1"
+			(at 124.46 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "990k"
+			(at 124.46 72.3899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.698 71.12 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 121.92 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3116,7 +3239,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 121.92 69.85 0)
+			(at 121.92 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3135,7 +3258,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "R3")
+					(reference "R_t1")
 					(unit 1)
 				)
 			)
@@ -3153,8 +3276,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8def91cf-43c7-4b8a-92e7-5cdd03fae2ab")
-		(property "Reference" "R4"
-			(at 184.15 82.55 0)
+		(property "Reference" "R_b2"
+			(at 184.15 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3165,7 +3288,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 184.15 85.09 0)
+			(at 184.15 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3217,7 +3340,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "R4")
+					(reference "R_b2")
 					(unit 1)
 				)
 			)
@@ -3248,7 +3371,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 107.95 191.77 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3324,9 +3446,8 @@
 				)
 			)
 		)
-		(property "Value" "${SIM.PARAMS}"
+		(property "Value" ""
 			(at 118.11 61.0035 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3460,7 +3581,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a827e158-62bd-4bef-ad87-324332343cf4")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR01"
 			(at 33.02 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -3473,7 +3594,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 33.02 181.61 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3521,7 +3641,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR04")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -3644,86 +3764,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 140.97 60.96 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b27b01ff-cf85-4be3-80b6-774c2e9ce4f8")
-		(property "Reference" "C1"
-			(at 140.97 53.34 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "16n"
-			(at 140.97 55.88 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 59.9948 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 140.97 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 140.97 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "356635fc-8ad1-4062-9282-8a9bc0870160")
-		)
-		(pin "2"
-			(uuid "089f0be3-b14d-4662-b99a-ea714817de92")
-		)
-		(instances
-			(project "Симуляция СЭС ИДЗ-4"
-				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GNDD")
 		(at 121.92 87.63 0)
 		(unit 1)
@@ -3735,7 +3775,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b48f7faa-ffc4-4ebe-acce-78a623e3c1e8")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR06"
 			(at 121.92 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -3748,7 +3788,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 121.92 91.44 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3796,7 +3835,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR014")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -3814,8 +3853,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bcf09448-3fc7-416f-ab42-d5e2d4237bca")
-		(property "Reference" "R2"
-			(at 124.46 82.55 0)
+		(property "Reference" "R_b1"
+			(at 124.46 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3826,7 +3865,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 124.46 85.09 0)
+			(at 124.46 85.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3878,7 +3917,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "R2")
+					(reference "R_b1")
 					(unit 1)
 				)
 			)
@@ -3896,7 +3935,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c68a311a-194f-4a73-8ade-78729e1093a4")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR011"
 			(at 262.89 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -3909,7 +3948,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 262.89 149.86 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3957,7 +3995,89 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR09")
+					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 130.81 71.12 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca1bc284-1ce9-4856-b166-1ac5cb0b0210")
+		(property "Reference" "C_t1"
+			(at 134.62 69.8499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4.5p"
+			(at 134.62 72.3899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.8448 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 130.81 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4374afda-ff21-47dc-921a-3196bd4477cf")
+		)
+		(pin "2"
+			(uuid "e130167d-2fb0-4962-831e-af4d308dc743")
+		)
+		(instances
+			(project "Симуляция СЭС ИДЗ-4"
+				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
+					(reference "C_t1")
 					(unit 1)
 				)
 			)
@@ -3988,7 +4108,6 @@
 		)
 		(property "Value" "0"
 			(at 267.97 143.51 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4054,7 +4173,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "edab2eba-fabf-4992-a3fb-fcaa87951288")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR04"
 			(at 107.95 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -4114,7 +4233,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR02")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -4132,7 +4251,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f8e3ad6f-e5ee-4239-931d-b56ad59fa27a")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR07"
 			(at 149.86 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -4145,7 +4264,6 @@
 		)
 		(property "Value" "GNDD"
 			(at 149.86 74.93 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4193,7 +4311,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "#PWR016")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -4211,7 +4329,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc6e1420-acd1-4683-a5d3-909fefaa8762")
-		(property "Reference" "R5"
+		(property "Reference" "R_lpf1"
 			(at 152.4 66.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4275,7 +4393,7 @@
 		(instances
 			(project "Симуляция СЭС ИДЗ-4"
 				(path "/e1cec9f0-bb46-48b7-8398-76a12d49967c"
-					(reference "R5")
+					(reference "R_lpf1")
 					(unit 1)
 				)
 			)

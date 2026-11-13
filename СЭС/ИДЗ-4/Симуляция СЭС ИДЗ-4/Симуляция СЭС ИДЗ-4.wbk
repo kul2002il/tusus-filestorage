@@ -15,7 +15,7 @@
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 10u 2m 0",
+        ".tran 10u 200u 0",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
@@ -38,6 +38,20 @@
         },
         {
           "color": "rgb(55, 126, 184)",
+          "cursor1": {
+            "position": 0.00010576923076923077,
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
+          "cursor2": {
+            "position": 0.00012395104895104896,
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
+          "cursorD": {
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
           "signal": "V(/output)",
           "trace_type": 257
         }
@@ -46,7 +60,7 @@
     {
       "analysis": "AC",
       "commands": [
-        ".ac dec 20 1 1Meg",
+        ".ac dec 20 10 100k",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
@@ -64,28 +78,29 @@
       "traces": [
         {
           "color": "rgb(77, 175, 74)",
-          "cursor1": {
-            "position": 2969.4845317182667,
-            "x_format": "3~Hz",
-            "y_format": "3~dB"
-          },
-          "cursorD": {
-            "x_format": "3~Hz",
-            "y_format": "3~dB"
-          },
           "signal": "V(/input) (сила)",
           "trace_type": 521
         },
         {
+          "color": "rgb(55, 126, 184)",
+          "signal": "V(/out1) (сила)",
+          "trace_type": 521
+        },
+        {
           "color": "rgb(228, 26, 28)",
+          "cursor1": {
+            "position": 1190.9149819539891,
+            "x_format": "3~s",
+            "y_format": "3~V"
+          },
           "cursor2": {
-            "position": 3967.118948343295,
-            "x_format": "3~Hz",
-            "y_format": "3~dB"
+            "position": 98.8,
+            "x_format": "3~s",
+            "y_format": "3~V"
           },
           "cursorD": {
-            "x_format": "3~Hz",
-            "y_format": "3~dB"
+            "x_format": "3~s",
+            "y_format": "3~V"
           },
           "signal": "V(/output) (сила)",
           "trace_type": 521
