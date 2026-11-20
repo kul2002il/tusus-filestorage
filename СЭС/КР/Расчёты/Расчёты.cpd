@@ -1,4 +1,7 @@
 '<style> body { max-width: initial } </style>
+'<style> .eq var,i {color: black !important;}</style>
+'<style> .nary {color: black !important;}</style>
+
 #Hide
 
 #Round 3
@@ -27,22 +30,29 @@ dB(x) = 20*log(abs(x))
 
 #Noc
 
-' Напряжения входа представлены только двумя уровнями:
-U_int_in_max = VCC ' = ' E_ип
-U_int_in_min = VEE ' = ' -E_ип
+' Напряжения входа представлены только двумя уровнями с учётом падения напряжения на диодах:
+U_Dint1 '=' U_Dint2 = 0.7В ';
+U_int_in_max = VCC ' = ' E_ип - U_Dint1 ';
+U_int_in_min = VEE ' = ' -E_ип + U_Dint2 '.
 ' Напряжения выхода ограничены напряжением срабатывания триггера
 U_int_out_max = E_ип - U_запас_нелинейных_искажений
 U_int_out_min = -U_int_out_max
 ' Напряжение на интеграторе изменяется линейно
-U_int_out(Δt) = U_0 - U_int_in * Δt / (C*R)
-U_int_in * Δt / (C*R) = U_0 - U_int_out(Δt)
-Δt = (U_0 - U_int_out(Δt)) * C * R / U_int_in
+U_int_out(Δt) = U_0 - U_int_in * Δt / (C*R) '⇒
+U_int_in * Δt / (C*R) = U_0 - U_int_out(Δt) '⇒
+Δt = (U_0 - U_int_out(Δt)) * C * R / U_int_in '.
 ' Напряжение изменяется от U_int_out_min до U_int_out_max и обратно, следовательно
-U_0 - U_int_out(t_int_down) ' = ' U_int_out_min - U_int_out_max ' = ' -2 * U_int_out_max ' для ' U_int_in > 0
-U_0 - U_int_out(t_int_up) ' = ' U_int_out_max - U_int_out_min ' = ' 2 * U_int_out_max ' для ' U_int_in < 0
-' Период сигнала составляет:
+U_0 - U_int_out(t_int_down) ' = ' U_int_out_min - U_int_out_max ' = ' -2 * U_int_out_max ' для ' U_int_in < 0 ';
+U_0 - U_int_out(t_int_up) ' = ' U_int_out_max - U_int_out_min ' = ' 2 * U_int_out_max ' для ' U_int_in > 0 '.
+
+' Период сигнала c учетом падения на диодах составляет:
 T = t_int_down + t_int_up '='
-(-2 * U_int_out_max) * C * R / U_int_in_max + (2 * U_int_out_max) * C * R / U_int_in_min
+'=' (-2 * U_int_out_max) * C * R_int1 / (U_int_in_min) + (2 * U_int_out_max) * C * R_int2 / U_int_in_max '='
+'=' 2*C * (-U_int_out_max * R_int1 / U_int_in_min + U_int_out_max * R_int2 / U_int_in_max) '=
+'= {' U_int_in_min = - U_int_in_max'} ='
+'=' 2*C * (-U_int_out_max * R_int1 / (-U_int_in_max) + U_int_out_max * R_int2 / U_int_in_max) '='
+'=' 2*C * U_int_out_max / U_int_in_max * (R_int1 + R_int2) '.
+' Данная схема позволяет независимо регулировать период сигнала и скважность.
 
 #Equ
 

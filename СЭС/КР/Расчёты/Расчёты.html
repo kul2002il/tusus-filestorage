@@ -1172,26 +1172,36 @@
         document.oncontextmenu = function () { contextMenu = true; };
         document.onmousedown = function () { contextMenu = false; };
     </script><style> body { max-width: initial } </style> 
+<style> .eq var,i {color: black !important;}</style> 
+<style> .nary {color: black !important;}</style> 
+<p>&nbsp;</p>
 <h3> Анализ </h3>
  <img src="img/схема с диодами в интеграторе.png" alt="схема с диодами в интеграторе"/> 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p> Напряжения входа представлены только двумя уровнями: </p>
-<p><span class="eq"><var>U</var><sub>int_in_max</sub> = <var>VCC</var></span>  =  <span class="eq"><var>E</var><sub>ип</sub></span></p>
-<p><span class="eq"><var>U</var><sub>int_in_min</sub> = <var>VEE</var></span>  =  <span class="eq">-<var>E</var><sub>ип</sub></span></p>
+<p> Напряжения входа представлены только двумя уровнями с учётом падения напряжения на диодах: </p>
+<p><span class="eq"><var>U</var><sub>Dint1</sub></span> = <span class="eq"><var>U</var><sub>Dint2</sub> = 0,7 <i>В</i></span> ; </p>
+<p><span class="eq"><var>U</var><sub>int_in_max</sub> = <var>VCC</var></span>  =  <span class="eq"><var>E</var><sub>ип</sub> − <var>U</var><sub>Dint1</sub></span> ; </p>
+<p><span class="eq"><var>U</var><sub>int_in_min</sub> = <var>VEE</var></span>  =  <span class="eq">-<var>E</var><sub>ип</sub> + <var>U</var><sub>Dint2</sub></span> . </p>
 <p> Напряжения выхода ограничены напряжением срабатывания триггера </p>
 <p><span class="eq"><var>U</var><sub>int_out_max</sub> = <var>E</var><sub>ип</sub> − <var>U</var><sub>запас_нелинейных_искажений</sub></span></p>
 <p><span class="eq"><var>U</var><sub>int_out_min</sub> = -<var>U</var><sub>int_out_max</sub></span></p>
 <p> Напряжение на интеграторе изменяется линейно </p>
-<p><span class="eq"><var>U</var><sub>int_out</sub> ( <var>Δt</var> )  = <var>U</var><sub>0</sub> − <span class="dvc"><var>U</var><sub>int_in</sub> · <var>Δt</var><span class="dvl"></span><var>C</var> · <var>R</var></span></span></p>
-<p><span class="eq"><span class="dvc"><var>U</var><sub>int_in</sub> · <var>Δt</var><span class="dvl"></span><var>C</var> · <var>R</var></span> = <var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>Δt</var> ) </span></p>
-<p><span class="eq"><var>Δt</var> = <span class="dvc"> ( <var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>Δt</var> )  )  · <i>C</i> · <var>R</var><span class="dvl"></span><var>U</var><sub>int_in</sub></span></span></p>
+<p><span class="eq"><var>U</var><sub>int_out</sub> ( <var>Δt</var> )  = <var>U</var><sub>0</sub> − <span class="dvc"><var>U</var><sub>int_in</sub> · <var>Δt</var><span class="dvl"></span><var>C</var> · <var>R</var></span></span> ⇒ </p>
+<p><span class="eq"><span class="dvc"><var>U</var><sub>int_in</sub> · <var>Δt</var><span class="dvl"></span><var>C</var> · <var>R</var></span> = <var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>Δt</var> ) </span> ⇒ </p>
+<p><span class="eq"><var>Δt</var> = <span class="dvc"> ( <var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>Δt</var> )  )  · <i>C</i> · <var>R</var><span class="dvl"></span><var>U</var><sub>int_in</sub></span></span> . </p>
 <p> Напряжение изменяется от U_int_out_min до U_int_out_max и обратно, следовательно </p>
-<p><span class="eq"><var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>t</var><sub>int_down</sub> ) </span>  =  <span class="eq"><var>U</var><sub>int_out_min</sub> − <var>U</var><sub>int_out_max</sub></span>  =  <span class="eq">-2 · <var>U</var><sub>int_out_max</sub></span>  для  <span class="eq"><var>U</var><sub>int_in</sub> &gt; 0</span></p>
-<p><span class="eq"><var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>t</var><sub>int_up</sub> ) </span>  =  <span class="eq"><var>U</var><sub>int_out_max</sub> − <var>U</var><sub>int_out_min</sub></span>  =  <span class="eq">2 · <var>U</var><sub>int_out_max</sub></span>  для  <span class="eq"><var>U</var><sub>int_in</sub> &lt; 0</span></p>
-<p> Период сигнала составляет: </p>
+<p><span class="eq"><var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>t</var><sub>int_down</sub> ) </span>  =  <span class="eq"><var>U</var><sub>int_out_min</sub> − <var>U</var><sub>int_out_max</sub></span>  =  <span class="eq">-2 · <var>U</var><sub>int_out_max</sub></span>  для  <span class="eq"><var>U</var><sub>int_in</sub> &lt; 0</span> ; </p>
+<p><span class="eq"><var>U</var><sub>0</sub> − <var>U</var><sub>int_out</sub>  ( <var>t</var><sub>int_up</sub> ) </span>  =  <span class="eq"><var>U</var><sub>int_out_max</sub> − <var>U</var><sub>int_out_min</sub></span>  =  <span class="eq">2 · <var>U</var><sub>int_out_max</sub></span>  для  <span class="eq"><var>U</var><sub>int_in</sub> &gt; 0</span> . </p>
+<p>&nbsp;</p>
+<p> Период сигнала c учетом падения на диодах составляет: </p>
 <p><span class="eq"><var>T</var> = <var>t</var><sub>int_down</sub> + <var>t</var><sub>int_up</sub></span> = </p>
-<p><span class="eq"><span class="dvc">-2 · <var>U</var><sub>int_out_max</sub> · <i>C</i> · <var>R</var><span class="dvl"></span><var>U</var><sub>int_in_max</sub></span> + <span class="dvc">2 · <var>U</var><sub>int_out_max</sub> · <i>C</i> · <var>R</var><span class="dvl"></span><var>U</var><sub>int_in_min</sub></span></span></p>
+<p>= <span class="eq"><span class="dvc">-2 · <var>U</var><sub>int_out_max</sub> · <i>C</i> · <var>R</var><sub>int1</sub><span class="dvl"></span><var>U</var><sub>int_in_min</sub></span> + <span class="dvc">2 · <var>U</var><sub>int_out_max</sub> · <i>C</i> · <var>R</var><sub>int2</sub><span class="dvl"></span><var>U</var><sub>int_in_max</sub></span></span> = </p>
+<p>= <span class="eq">2 <i>C</i> · <span class="b1">(</span><span class="dvc">-<var>U</var><sub>int_out_max</sub> · <var>R</var><sub>int1</sub><span class="dvl"></span><var>U</var><sub>int_in_min</sub></span> + <span class="dvc"><var>U</var><sub>int_out_max</sub> · <var>R</var><sub>int2</sub><span class="dvl"></span><var>U</var><sub>int_in_max</sub></span><span class="b1">)</span></span> = </p>
+<p>= { <span class="eq"><var>U</var><sub>int_in_min</sub> = -<var>U</var><sub>int_in_max</sub></span> } = </p>
+<p>= <span class="eq">2 <i>C</i> · <span class="b1">(</span><span class="dvc">-<var>U</var><sub>int_out_max</sub> · <var>R</var><sub>int1</sub><span class="dvl"></span>-<var>U</var><sub>int_in_max</sub></span> + <span class="dvc"><var>U</var><sub>int_out_max</sub> · <var>R</var><sub>int2</sub><span class="dvl"></span><var>U</var><sub>int_in_max</sub></span><span class="b1">)</span></span> = </p>
+<p>= <span class="eq"><span class="dvc">2 <i>C</i> · <var>U</var><sub>int_out_max</sub><span class="dvl"></span><var>U</var><sub>int_in_max</sub></span> ·  ( <var>R</var><sub>int1</sub> + <var>R</var><sub>int2</sub> ) </span> . </p>
+<p> Данная схема позволяет независимо регулировать период сигнала и скважность. </p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
