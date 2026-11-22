@@ -300,6 +300,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Simulation_SPICE:0"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#GND"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#subsec_Circuit_elements__device"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "0V reference potential for simulation"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "simulation"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "0_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 0 -1.27) (xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "0_1_1"
+				(pin power_in line
+					(at 0 0 0)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Simulation_SPICE:D"
 			(pin_names
 				(offset 1.016)
@@ -724,6 +839,229 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Simulation_SPICE:VDC"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.0254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "V"
+				(at 2.54 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "1"
+				(at 2.54 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Voltage source, DC"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=+ 2=-"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Type" "DC"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "V"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "ki_keywords" "simulation"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VDC_0_0"
+				(polyline
+					(pts
+						(xy -1.27 0.254) (xy 1.27 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 -0.254) (xy -1.27 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 -0.254) (xy -0.254 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -0.254) (xy 0.762 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "+"
+					(at 0 1.905 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "VDC_0_1"
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "VDC_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GNDD"
 			(power global)
 			(pin_numbers
@@ -1118,44 +1456,66 @@
 		)
 	)
 	(junction
-		(at 100.33 36.83)
+		(at 269.24 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "31101c3c-2bb4-4868-82ca-711fb56cfc8a")
+		(uuid "231eba69-65ff-4dc8-b5a6-6b7a7756ff33")
 	)
 	(junction
-		(at 119.38 27.94)
+		(at 160.02 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32f736d5-4757-49dd-b4ab-77e6cdc36daa")
+	)
+	(junction
+		(at 123.19 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d3819ce-c4a2-42e5-8018-710e897c844f")
+	)
+	(junction
+		(at 179.07 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "53529e23-ce35-46c2-8458-a724187bdf3e")
 	)
 	(junction
-		(at 63.5 27.94)
+		(at 160.02 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7462004a-4727-43a3-ab17-c063a3048461")
+		(uuid "783e33c2-2297-4a57-8e0b-68285255c255")
 	)
 	(junction
-		(at 100.33 27.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "867faba5-1ca6-4834-aecf-5fa9002170af")
-	)
-	(junction
-		(at 85.09 27.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "936d9abf-3da4-4f41-b4ff-452969b4eb02")
-	)
-	(junction
-		(at 78.74 27.94)
+		(at 138.43 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bf16167b-d594-4236-93c4-f1a09beb5774")
 	)
+	(junction
+		(at 144.78 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c1b4deca-b7bf-43fc-a254-c2d2af91726b")
+	)
+	(junction
+		(at 273.05 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d9e4b134-0655-4b72-a67e-4889d858bbae")
+	)
 	(wire
 		(pts
-			(xy 78.74 27.94) (xy 78.74 45.72)
+			(xy 110.49 57.15) (xy 179.07 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05e55631-b2a7-4b87-a4e2-c6b0a3587842")
+	)
+	(wire
+		(pts
+			(xy 138.43 72.39) (xy 138.43 90.17)
 		)
 		(stroke
 			(width 0)
@@ -1165,7 +1525,17 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 27.94) (xy 63.5 43.18)
+			(xy 144.78 72.39) (xy 144.78 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "275fafef-d63c-47d8-a47e-f3214d06f15d")
+	)
+	(wire
+		(pts
+			(xy 123.19 72.39) (xy 123.19 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1175,7 +1545,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 48.26) (xy 100.33 48.26)
+			(xy 163.83 92.71) (xy 160.02 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1185,17 +1555,37 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 27.94) (xy 85.09 36.83)
+			(xy 273.05 140.97) (xy 273.05 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "59fbd334-2169-4a4f-a398-ed082b2f818f")
+		(uuid "4d41daf8-45fc-4b11-91bf-48c67cb1bb4c")
 	)
 	(wire
 		(pts
-			(xy 119.38 45.72) (xy 119.38 27.94)
+			(xy 265.43 142.24) (xy 269.24 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b52cafc-a641-4c61-8b96-7c9703b2c9cd")
+	)
+	(wire
+		(pts
+			(xy 110.49 72.39) (xy 115.57 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6295e19d-fbf1-4423-a9be-533bbc48a34f")
+	)
+	(wire
+		(pts
+			(xy 179.07 90.17) (xy 179.07 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1205,7 +1595,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 27.94) (xy 76.2 27.94)
+			(xy 138.43 72.39) (xy 135.89 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1215,7 +1605,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 27.94) (xy 106.68 27.94)
+			(xy 160.02 72.39) (xy 166.37 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1225,7 +1615,17 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 27.94) (xy 114.3 27.94)
+			(xy 273.05 142.24) (xy 273.05 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e11164c-38bb-404d-ab86-5e23573e43ae")
+	)
+	(wire
+		(pts
+			(xy 179.07 72.39) (xy 173.99 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1235,17 +1635,17 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 20.32) (xy 119.38 20.32)
+			(xy 179.07 72.39) (xy 187.96 72.39)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bf98ea71-a1f8-4cb6-8f88-7a76bbee2a75")
+		(uuid "97f5c7e7-5753-495b-9df9-ac20815555f8")
 	)
 	(wire
 		(pts
-			(xy 85.09 27.94) (xy 78.74 27.94)
+			(xy 144.78 72.39) (xy 138.43 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1255,37 +1655,27 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 20.32) (xy 119.38 27.94)
+			(xy 265.43 143.51) (xy 265.43 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d574263e-0844-4eab-a559-792a571cbe8c")
+		(uuid "d0f012aa-fa89-4272-95ac-28b0d828cae1")
 	)
 	(wire
 		(pts
-			(xy 55.88 27.94) (xy 55.88 20.32)
+			(xy 269.24 142.24) (xy 273.05 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d84b2fa3-1f9c-47ec-bc70-cb11bb00108c")
+		(uuid "e4befe65-1f27-40e5-83db-53edfe1650a2")
 	)
 	(wire
 		(pts
-			(xy 100.33 36.83) (xy 100.33 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef6d3f35-0977-4570-b1fd-8cea0a6aeb4f")
-	)
-	(wire
-		(pts
-			(xy 100.33 48.26) (xy 100.33 36.83)
+			(xy 160.02 72.39) (xy 160.02 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1295,7 +1685,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 27.94) (xy 68.58 27.94)
+			(xy 123.19 72.39) (xy 128.27 72.39)
 		)
 		(stroke
 			(width 0)
@@ -1303,8 +1693,28 @@
 		)
 		(uuid "f200116e-e848-411f-83db-1daf4528bf8f")
 	)
+	(wire
+		(pts
+			(xy 110.49 72.39) (xy 110.49 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6c4483f-056a-420c-b314-ca70d113f861")
+	)
+	(wire
+		(pts
+			(xy 179.07 57.15) (xy 179.07 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe79de94-1213-4563-ac51-371650903bdc")
+	)
 	(label "U_int_in"
-		(at 78.74 27.94 0)
+		(at 138.43 72.39 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1314,7 +1724,7 @@
 		(uuid "7da88560-ae91-4051-892e-eb5a72f2e0b2")
 	)
 	(label "U_int_out"
-		(at 119.38 20.32 180)
+		(at 187.96 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1325,7 +1735,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 109.22 38.1 0)
+		(at 168.91 82.55 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1336,7 +1746,7 @@
 		(fields_autoplaced yes)
 		(uuid "04c81358-e9a7-473b-bb24-95405f72b51b")
 		(property "Reference" "#PWR05"
-			(at 109.22 41.91 0)
+			(at 168.91 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1347,7 +1757,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 109.22 33.02 0)
+			(at 168.91 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1357,7 +1767,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 38.1 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1368,7 +1778,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 38.1 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1379,7 +1789,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 109.22 38.1 0)
+			(at 168.91 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1402,8 +1812,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 96.52 27.94 90)
+		(lib_id "Simulation_SPICE:D")
+		(at 148.59 85.09 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1411,10 +1821,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "04efcae0-97d8-4d0d-8adf-bf2ef0a871cb")
-		(property "Reference" "Rint1"
-			(at 96.52 24.13 90)
+		(uuid "05e2f0e8-09c2-49c9-bcb3-b8aab888d5e6")
+		(property "Reference" "Dint2"
+			(at 148.59 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1423,8 +1832,8 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 97.7899 25.4 0)
+		(property "Value" "D"
+			(at 148.59 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1432,11 +1841,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 29.718 90)
+			(at 148.59 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1446,8 +1854,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 96.52 27.94 0)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_DIODEs"
+			(at 148.59 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1457,8 +1865,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 96.52 27.94 0)
+		(property "Description" "Diode for simulation or PCB"
+			(at 148.59 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1468,16 +1876,49 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "866dd50e-cec7-4840-8d11-ec20a5848b64")
+		(property "Sim.Device" "D"
+			(at 148.59 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 148.59 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Params" "rs=50m cjo=10p"
+			(at 148.59 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "2"
-			(uuid "b4ba15ae-2816-4953-af9d-3401cb30cfb1")
+			(uuid "b46dc444-aa78-4835-b07b-529303a7f52b")
+		)
+		(pin "1"
+			(uuid "6a201de5-d901-45ce-9292-99d981783d56")
 		)
 		(instances
 			(project "Готовые схемы"
 				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "Rint1")
+					(reference "Dint2")
 					(unit 1)
 				)
 			)
@@ -1485,7 +1926,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:OPAMP")
-		(at 111.76 45.72 0)
+		(at 171.45 90.17 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1495,7 +1936,7 @@
 		(dnp no)
 		(uuid "08ab5dbe-3402-44e4-9b28-42c2cf1078e6")
 		(property "Reference" "U2"
-			(at 114.3 41.91 0)
+			(at 173.99 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1505,7 +1946,7 @@
 			)
 		)
 		(property "Value" "${SIM.PARAMS}"
-			(at 119.38 43.2236 0)
+			(at 179.07 87.6736 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1515,7 +1956,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1526,7 +1967,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1537,7 +1978,7 @@
 			)
 		)
 		(property "Description" "Operational amplifier, single"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1548,7 +1989,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=in+ 2=in- 3=vcc 4=vee 5=out"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1559,7 +2000,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1571,7 +2012,7 @@
 			)
 		)
 		(property "Sim.Library" "${KICAD9_SYMBOL_DIR}/Simulation_SPICE.sp"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1582,7 +2023,7 @@
 			)
 		)
 		(property "Sim.Name" "kicad_builtin_opamp"
-			(at 111.76 45.72 0)
+			(at 171.45 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1617,204 +2058,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:D")
-		(at 88.9 36.83 0)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0cb0261d-f76d-4a80-86a0-2b8763b7c02f")
-		(property "Reference" "Dint2"
-			(at 88.9 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D"
-			(at 88.9 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_DIODEs"
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Diode for simulation or PCB"
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Params" "rs=50m cjo=10p"
-			(at 88.9 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c11e0015-f08e-4b6e-a503-554bf5f53ee7")
-		)
-		(pin "2"
-			(uuid "acc258ca-4eb8-4c34-aa8a-135cab657f43")
-		)
-		(instances
-			(project "Готовые схемы"
-				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "Dint2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 72.39 27.94 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1c482d42-5564-483a-b961-014e873d8fa8")
-		(property "Reference" "Rtrig2"
-			(at 72.39 24.13 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 73.6599 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 72.39 29.718 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 72.39 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 72.39 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "694f3c72-d73b-4ffe-88dc-620168918b3c")
-		)
-		(pin "2"
-			(uuid "7a280ccf-a426-49f2-80eb-d724dfe64442")
-		)
-		(instances
-			(project "Готовые схемы"
-				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "Rtrig2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GNDD")
-		(at 63.5 48.26 0)
+		(at 123.19 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1825,7 +2070,7 @@
 		(fields_autoplaced yes)
 		(uuid "29c108bc-760a-49ff-b8cd-d6ca7746ad3b")
 		(property "Reference" "#PWR03"
-			(at 63.5 54.61 0)
+			(at 123.19 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1836,7 +2081,7 @@
 			)
 		)
 		(property "Value" "GNDD"
-			(at 63.5 52.07 0)
+			(at 123.19 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1847,7 +2092,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 63.5 48.26 0)
+			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1858,7 +2103,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 63.5 48.26 0)
+			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1869,7 +2114,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 63.5 48.26 0)
+			(at 123.19 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1893,7 +2138,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 59.69 27.94 90)
+		(at 156.21 85.09 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1902,9 +2147,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "388f961b-60a5-4fa7-8737-ea8a42573ef3")
-		(property "Reference" "Rtrig1"
-			(at 59.69 24.13 90)
+		(uuid "354838d7-5d57-4204-a8c0-82ac92669382")
+		(property "Reference" "Rint2"
+			(at 156.21 78.74 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1913,20 +2158,18 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 60.9599 25.4 0)
-			(hide yes)
+		(property "Value" "20k"
+			(at 156.21 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 59.69 29.718 90)
+			(at 156.21 86.868 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1937,7 +2180,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 59.69 27.94 0)
+			(at 156.21 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1948,7 +2191,169 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 59.69 27.94 0)
+			(at 156.21 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9fc7ca02-2dc8-4184-a0da-ab452eee16b5")
+		)
+		(pin "1"
+			(uuid "aff7fcdf-e5be-4378-baa3-af3efec441b8")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "Rint2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 156.21 72.39 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3b56412f-588e-424f-b45f-63e579767ef3")
+		(property "Reference" "Rint1"
+			(at 156.21 66.04 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 156.21 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 74.168 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 156.21 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d37ade59-0c95-438a-b941-4d6e8a77367c")
+		)
+		(pin "1"
+			(uuid "6b05ab98-79ed-49fc-9069-eae3c1d7bc39")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "Rint1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDD")
+		(at 269.24 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "463a65fa-ebe9-4cc0-9fae-7893031ef264")
+		(property "Reference" "#PWR08"
+			(at 269.24 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDD"
+			(at 269.24 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 269.24 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 269.24 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
+			(at 269.24 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1959,10 +2364,87 @@
 			)
 		)
 		(pin "1"
-			(uuid "c8cdec67-c5f4-43c2-a761-13b603dcaac5")
+			(uuid "d0bd35b5-dd80-4794-817c-a3777e2ee3a2")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 119.38 72.39 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "542edca8-9e48-490f-8ac5-f3fd50ee43b8")
+		(property "Reference" "Rtrig1"
+			(at 119.38 66.04 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 119.38 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 74.168 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 119.38 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "2"
-			(uuid "bf333e4f-d07f-4ac0-958e-7ff849c4f53c")
+			(uuid "97b42c5d-5801-448f-8f52-808b8f0a5852")
+		)
+		(pin "1"
+			(uuid "d0d8cc56-8892-465d-b48f-d0dd415aad42")
 		)
 		(instances
 			(project "Готовые схемы"
@@ -1975,7 +2457,7 @@
 	)
 	(symbol
 		(lib_id "power:VEE")
-		(at 68.58 53.34 180)
+		(at 128.27 97.79 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1986,7 +2468,7 @@
 		(fields_autoplaced yes)
 		(uuid "5f0f29d8-88ca-44ff-b7b9-23b7d566f761")
 		(property "Reference" "#PWR02"
-			(at 68.58 49.53 0)
+			(at 128.27 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1997,7 +2479,7 @@
 			)
 		)
 		(property "Value" "VEE"
-			(at 68.58 58.42 0)
+			(at 128.27 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2007,7 +2489,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 53.34 0)
+			(at 128.27 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2018,7 +2500,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 53.34 0)
+			(at 128.27 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2029,7 +2511,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VEE\""
-			(at 68.58 53.34 0)
+			(at 128.27 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2052,8 +2534,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 96.52 36.83 90)
+		(lib_id "Simulation_SPICE:D")
+		(at 148.59 72.39 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2061,10 +2544,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "61282f19-fa32-4ae1-825d-c10f4fdac76f")
-		(property "Reference" "Rint2"
-			(at 96.52 33.02 90)
+		(uuid "61e959fd-72b2-4c17-ae5a-9aa2f5cfca22")
+		(property "Reference" "Dint1"
+			(at 148.59 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2073,8 +2555,8 @@
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 97.7899 34.29 0)
+		(property "Value" "D"
+			(at 148.59 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2082,11 +2564,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 96.52 38.608 90)
+			(at 148.59 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2096,8 +2577,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 96.52 36.83 0)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_DIODEs"
+			(at 148.59 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2107,8 +2588,8 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
-			(at 96.52 36.83 0)
+		(property "Description" "Diode for simulation or PCB"
+			(at 148.59 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2118,16 +2599,49 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "68eb8879-6d79-40c6-9294-c5f864721844")
+		(property "Sim.Device" "D"
+			(at 148.59 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 148.59 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Params" "rs=50m cjo=10p"
+			(at 148.59 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
 		(pin "2"
-			(uuid "3d62a3d8-4e95-40ec-b9d7-3844dfdc3470")
+			(uuid "8f7ed706-b9c4-4bb3-be5a-dace592a818d")
+		)
+		(pin "1"
+			(uuid "b74e7001-7434-4cf4-b097-b2392b32550f")
 		)
 		(instances
 			(project "Готовые схемы"
 				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "Rint2")
+					(reference "Dint1")
 					(unit 1)
 				)
 			)
@@ -2135,7 +2649,7 @@
 	)
 	(symbol
 		(lib_id "power:VEE")
-		(at 109.22 53.34 180)
+		(at 168.91 97.79 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2146,7 +2660,7 @@
 		(fields_autoplaced yes)
 		(uuid "640933cc-7752-4a68-9a2e-a13cd79e1b09")
 		(property "Reference" "#PWR06"
-			(at 109.22 49.53 0)
+			(at 168.91 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2157,7 +2671,7 @@
 			)
 		)
 		(property "Value" "VEE"
-			(at 109.22 58.42 0)
+			(at 168.91 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2167,7 +2681,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 53.34 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2178,7 +2692,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 53.34 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2189,7 +2703,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VEE\""
-			(at 109.22 53.34 0)
+			(at 168.91 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2212,8 +2726,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VCC")
-		(at 68.58 38.1 0)
+		(lib_id "Simulation_SPICE:VDC")
+		(at 273.05 135.89 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2222,9 +2736,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "8b7296cc-9b50-4627-b762-a3caaeb9fb04")
-		(property "Reference" "#PWR01"
-			(at 68.58 41.91 0)
+		(uuid "6c0bc363-1f27-4c5b-bc77-fb612ef8b595")
+		(property "Reference" "V1"
+			(at 276.86 134.5927 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "15"
+			(at 276.86 137.1327 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 273.05 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2234,8 +2770,101 @@
 				)
 			)
 		)
-		(property "Value" "VCC"
-			(at 68.58 33.02 0)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
+			(at 273.05 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Voltage source, DC"
+			(at 273.05 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 273.05 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" "DC"
+			(at 273.05 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "V"
+			(at 273.05 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "576f8858-38d9-4ac6-8db9-030b6a5785e8")
+		)
+		(pin "2"
+			(uuid "0c986343-c59e-4afa-a5dd-f60ea0d07b4c")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "V1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 170.18 72.39 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6fac36e2-0845-4bd1-a8d9-aadb6c37b42f")
+		(property "Reference" "C1"
+			(at 170.18 64.77 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "50n"
+			(at 170.18 67.31 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2245,7 +2874,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 38.1 0)
+			(at 173.99 71.4248 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2256,7 +2885,166 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 38.1 0)
+			(at 170.18 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 170.18 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "775650f2-8dfb-40d2-a54b-dc1c0d519621")
+		)
+		(pin "1"
+			(uuid "e87d964c-bdda-4e8d-84fb-2fc633635e85")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VEE")
+		(at 273.05 153.67 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81f5f656-adef-46a3-ae01-2014e661ed3e")
+		(property "Reference" "#PWR09"
+			(at 273.05 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VEE"
+			(at 273.05 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 273.05 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 273.05 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VEE\""
+			(at 273.05 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "05e566d7-3a49-4757-a9a1-c97f380df9fa")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 128.27 82.55 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b7296cc-9b50-4627-b762-a3caaeb9fb04")
+		(property "Reference" "#PWR01"
+			(at 128.27 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 128.27 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2267,7 +3055,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 68.58 38.1 0)
+			(at 128.27 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2291,7 +3079,7 @@
 	)
 	(symbol
 		(lib_id "Simulation_SPICE:OPAMP")
-		(at 71.12 45.72 0)
+		(at 130.81 90.17 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2301,7 +3089,7 @@
 		(dnp no)
 		(uuid "92a19b61-60ea-4210-b8db-fc225ac0755d")
 		(property "Reference" "U1"
-			(at 74.422 41.91 0)
+			(at 134.112 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2311,7 +3099,7 @@
 			)
 		)
 		(property "Value" "${SIM.PARAMS}"
-			(at 78.74 43.2236 0)
+			(at 138.43 87.6736 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2321,7 +3109,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2332,7 +3120,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec__SUBCKT_Subcircuits"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2343,7 +3131,7 @@
 			)
 		)
 		(property "Description" "Operational amplifier, single"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2354,7 +3142,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=in+ 2=in- 3=vcc 4=vee 5=out"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2365,7 +3153,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2377,7 +3165,7 @@
 			)
 		)
 		(property "Sim.Library" "${KICAD9_SYMBOL_DIR}/Simulation_SPICE.sp"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2388,7 +3176,7 @@
 			)
 		)
 		(property "Sim.Name" "kicad_builtin_opamp"
-			(at 71.12 45.72 0)
+			(at 130.81 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2424,7 +3212,7 @@
 	)
 	(symbol
 		(lib_id "power:GNDD")
-		(at 104.14 43.18 0)
+		(at 163.83 87.63 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2435,7 +3223,7 @@
 		(fields_autoplaced yes)
 		(uuid "ba707633-658f-4793-bd91-c27464fc6ff3")
 		(property "Reference" "#PWR04"
-			(at 104.14 49.53 0)
+			(at 163.83 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2446,7 +3234,7 @@
 			)
 		)
 		(property "Value" "GNDD"
-			(at 104.14 46.99 0)
+			(at 163.83 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2457,7 +3245,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 43.18 0)
+			(at 163.83 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2468,7 +3256,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 43.18 0)
+			(at 163.83 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2479,7 +3267,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GNDD\" , digital ground"
-			(at 104.14 43.18 0)
+			(at 163.83 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2502,8 +3290,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 110.49 27.94 90)
+		(lib_id "Device:R")
+		(at 132.08 72.39 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2512,9 +3300,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "da91f62f-bca7-4669-80d3-bdfbc8070af5")
-		(property "Reference" "C1"
-			(at 110.49 22.86 90)
+		(uuid "bb0100cf-9746-4a8c-a183-844ce5a08263")
+		(property "Reference" "Rtrig2"
+			(at 132.08 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2523,20 +3311,18 @@
 				)
 			)
 		)
-		(property "Value" "C"
-			(at 111.7599 24.13 0)
-			(hide yes)
+		(property "Value" "20k"
+			(at 132.08 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 26.9748 0)
+			(at 132.08 74.168 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2547,7 +3333,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 27.94 0)
+			(at 132.08 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2557,8 +3343,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 110.49 27.94 0)
+		(property "Description" "Resistor"
+			(at 132.08 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2567,25 +3353,25 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "1"
-			(uuid "2d2dec31-8a45-4270-8b43-a699361b343c")
 		)
 		(pin "2"
-			(uuid "1428dd26-b9f7-461d-8fb3-bd3ae8a9fdce")
+			(uuid "29472c57-682a-4642-ade2-8395e3da6903")
+		)
+		(pin "1"
+			(uuid "efe9c0c9-85c9-4f4b-9549-07a0a215e3bb")
 		)
 		(instances
 			(project "Готовые схемы"
 				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "C1")
+					(reference "Rtrig2")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:D")
-		(at 88.9 27.94 180)
+		(lib_id "Simulation_SPICE:VDC")
+		(at 273.05 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2594,9 +3380,32 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ee197683-146a-4e59-85c4-d0029dea04ec")
-		(property "Reference" "Dint1"
-			(at 88.9 24.13 0)
+		(uuid "d3d7ce5e-4937-4123-86e9-abcb7c0b30ab")
+		(property "Reference" "V2"
+			(at 276.86 147.2927 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "15"
+			(at 276.86 149.8327 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 273.05 148.59 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2605,9 +3414,102 @@
 				)
 			)
 		)
-		(property "Value" "D"
-			(at 88.9 31.75 0)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for"
+			(at 273.05 148.59 0)
 			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Voltage source, DC"
+			(at 273.05 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=+ 2=-"
+			(at 273.05 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" "DC"
+			(at 273.05 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "V"
+			(at 273.05 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "1"
+			(uuid "2ad24be0-1ca8-469e-a44f-f801eeae4e6c")
+		)
+		(pin "2"
+			(uuid "26ed5ddc-38ee-4db8-85cd-848a2dcd9829")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "V2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:0")
+		(at 265.43 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e7fe8afa-1da5-4079-b674-e947bb20e6d2")
+		(property "Reference" "#GND01"
+			(at 265.43 148.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 265.43 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2617,7 +3519,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 88.9 27.94 0)
+			(at 265.43 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2627,8 +3529,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_DIODEs"
-			(at 88.9 27.94 0)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#subsec_Circuit_elements__device"
+			(at 265.43 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2638,41 +3540,8 @@
 				)
 			)
 		)
-		(property "Description" "Diode for simulation or PCB"
-			(at 88.9 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 88.9 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 88.9 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Params" "rs=50m cjo=10p"
-			(at 88.9 27.94 0)
+		(property "Description" "0V reference potential for simulation"
+			(at 265.43 151.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2683,15 +3552,90 @@
 			)
 		)
 		(pin "1"
-			(uuid "c30ec974-a885-42a3-a5d4-d8e28c250c22")
-		)
-		(pin "2"
-			(uuid "acab3d17-0091-4c45-b7e6-0df5a9f751e6")
+			(uuid "eeb6d69f-8057-4dd3-be1b-9eb491ca2518")
 		)
 		(instances
 			(project "Готовые схемы"
 				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
-					(reference "Dint1")
+					(reference "#GND01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 273.05 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe531d9d-cb60-4b18-91e9-f4094926b501")
+		(property "Reference" "#PWR07"
+			(at 273.05 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 273.05 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 273.05 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 273.05 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 273.05 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "faab1a18-78a6-4b1d-a27c-364a0437b18f")
+		)
+		(instances
+			(project "Готовые схемы"
+				(path "/4a50df4f-08be-4e89-941e-5e460fb6a749"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)

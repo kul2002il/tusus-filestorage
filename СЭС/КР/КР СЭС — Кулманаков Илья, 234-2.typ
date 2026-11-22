@@ -47,8 +47,8 @@
 
 
 // Заголовки
-#set heading(numbering: (..nums) => {
-  let n = nums.pos()
+#set heading(numbering: (..numbers) => {
+  let n = numbers.pos()
   if n.len() == 1 {
     numbering("1", ..n)
   } else if n.len() == 2 {
@@ -76,11 +76,28 @@
   heading(level: 1, numbering: none, title)
 }
 
+// Списки
+#let section-counter = counter("section")
+
+#let startList() = {
+  section-counter.update(0)
+}
+#let increment(level) = {
+  parbreak()
+  section-counter.step(level: level)
+  context section-counter.display("1.1.1")
+  [.]
+}
+#let mark = [
+  #parbreak()
+  •
+]
+
 // Рисунки
 #set figure(
   supplement: "Рисунок",
-  numbering: (..nums) => {
-    let n = nums.pos()
+  numbering: (..numbers) => {
+    let n = numbers.pos()
     let section = counter(heading.where(level: 1)).get().first()
     if n.len() >= 1 {
       numbering("1.1", section, n.at(0))
@@ -90,14 +107,18 @@
   },
 )
 
-#show figure.where(kind: image): set figure.caption(position: bottom)
-#show figure.caption: set align(center)
-#show figure.where(kind: image): set figure.caption(separator: [ – ])
-#show figure.caption: set par(
-  leading: 1em,
-  first-line-indent: (amount: 0pt, all: true),
-  justify: false,
-)
+#show figure.where(kind: image): set figure.caption(position: bottom, separator: [ – ])
+
+#show figure.caption: it => {
+  set align(center)
+  set par(
+    leading: 1em,
+    first-line-indent: (amount: 0pt, all: true),
+    justify: false,
+  )
+  it
+}
+
 #show figure.where(kind: image): it => {
   set align(center)
   set par(first-line-indent: 0pt)
@@ -117,9 +138,9 @@
 }
 
 // Формулы
-#set math.equation(numbering: (..nums) => {
+#set math.equation(numbering: (..numbers) => {
   let section = counter(heading.where(level: 1)).get().first()
-  numbering("(1.1)", section, ..nums)
+  numbering("(1.1)", section, ..numbers)
 })
 #set math.equation(supplement: none)
 
@@ -153,36 +174,45 @@
 #let endnotes-state = state("endnotes", ())
 #let endnote-counter = counter("endnote")
 
-#let endnote(body) = {
+#let endnote(name, body) = {
   endnote-counter.step()
   context {
     let idx = endnote-counter.get().first()
     let source-label = label("endpoint-source:" + str(idx))
     let placement-label = label("endpoint-placement:" + str(idx))
-    endnotes-state.update(x => x + ((idx, body, source-label, placement-label),))
+    endnotes-state.update(x => x + ((idx, name, body, source-label, placement-label),))
     [#link(placement-label)[#idx]#source-label]
+  }
+}
+
+#let getEndnoteFor(name) = context {
+  let notes = endnotes-state.get()
+  let matches = notes.filter(n => n.at(1) == name)
+  if matches.len() == 0 {
+    panic("Сноска с именем \"" + name + "\" не найдена")
+  } else {
+    let (idx, name, body, source-label, placement-label) = matches.first()
+    [#link(placement-label)[#idx]]
   }
 }
 
 #let print-endnotes() = context {
   let notes = endnotes-state.get()
   if notes.len() == 0 { return }
-  for (idx, body, source-label, placement-label) in notes {
+  for (idx, name, body, source-label, placement-label) in notes {
     [#link(source-label)[#idx]#placement-label. #body]
   }
   endnotes-state.update(())
 }
 
 // Приколы
-#show "—": "–"
-#let emptyLine = v(leading)
+#show "—": "–" // Замена отвратительно длинного тире на среднее тире.
+#let emptyLine = v(leading) // Просто пустая строка.
 
 
 
 
 // Титульный лист
-
-
 #titleCenter[
 Министерство науки и высшего образования Российской Федерации
 
@@ -268,25 +298,14 @@
 Студенту группы 234-2, Кулманакову Илье Владимировичу
 ]
 
-#let section-counter = counter("section")
-
-#let increment(level) = {
-  parbreak()
-  section-counter.step(level: level)
-  context section-counter.display("1.1.1")
-  [.]
-}
-#let mark = [
-  #parbreak()
-  •
-]
-
+#startList()
 #increment(1) Тема проекта: Функциональный генератор импульсов
 #increment(1) Срок сдачи работы на кафедру #date
-#increment(1) Цель проекта: Овладеть расчётом и модельными исследованиями функционального генератора импульсов на операционных усилителях.
+#increment(1) Цель проекта: Овладеть расчётом и модельными исследованиями многофункционального генератора на операционных усилителях.
 #increment(1) Исходные данные для проектирования:
-#mark для прямоугольного сигнала регулировка скважности следования импульсов от 1,1 до 10;
-#mark для треугольного сигнала регулировка отношение времени нарастания к периоду от 0,1 до 0,9;
+#mark выдаваемые сигналы: прямоугольный, треугольный, синусоидальный
+#mark для прямоугольного импульса регулировка скважности следования импульсов от 1,1 до 10;
+#mark для треугольного импульса регулировка отношение времени нарастания к длительности импульса от 0,1 до 0,9;
 #mark регулировка периода импульсов в пределах от 50 мкс до 0,5 с;
 #mark регулировка амплитуды импульсов в пределах от 0В до 10В;
 #mark регулировка постоянной составляющей выхода от -10В до 10В;
@@ -342,10 +361,10 @@
 = АНАЛИЗ ИМЕЮЩИХСЯ РЕШЕНИЙ
 == Симметричная схема на триггере Шмидта и интеграторе
 
-Для создания треугольного сигнала существует схема [#endnote[Генераторы треугольных импульсов на ОУ | HomeElectronics URL: https://www.electronicsblog.ru/usilitelnaya-sxemotexnika/generatory-treugolnyx-impulsov-na-ou.html (дата обращения: 17.11.2016).]]<ссылка_на_схемы_с_триггером_и_интегратором>, которая представляет собой последовательно соединённые триггер Шмидта и интегратор. Схема представлена на рисунке@Схема_с_триггером_и_интегратором.
+Для создания треугольного сигнала существует схема [#endnote("генератор на интеграторе")[Генераторы треугольных импульсов на ОУ | HomeElectronics URL: https://www.electronicsblog.ru/usilitelnaya-sxemotexnika/generatory-treugolnyx-impulsov-na-ou.html (дата обращения: 17.11.2016).]]<ссылка_на_схемы_с_триггером_и_интегратором>, которая представляет собой последовательно соединённые триггер Шмидта и интегратор. Схема представлена на рисунке@Схема_с_триггером_и_интегратором.
 
 #figure(
-  image("Расчёты/img/схема на интеграторе.png"),
+  image("images/схема на интеграторе.png"),
   caption: [Схема на триггере Шмидта и интеграторе],
 ) <Схема_с_триггером_и_интегратором>
 
@@ -353,35 +372,42 @@
 
 == Схема с двумя диодами
 
-Для несимметричного времени интегрирования для положительных и отрицательных напряжений применяют схему с диодами на входе [1], представлена на рисунке@Схема_с_диодами.
+Для несимметричного времени интегрирования для положительных и отрицательных напряжений применяют схему с диодами на входе [#getEndnoteFor("генератор на интеграторе")], представлена на рисунке@Схема_с_диодами.
 
 #figure(
-  image("Расчёты/img/схема с диодами в интеграторе.png"),
+  image("images/схема с диодами в интеграторе.png"),
   caption: [Схема с диодами в цепи интегратора],
 ) <Схема_с_диодами>
+
+Временная диаграмма для данной схемы представлена на рисунке@временная_диаграмма_схемы_с_диодами.
+
+#figure(
+  image("images/built/временная диаграмма интегратора с диодами.svg"),
+  caption: [Временная диаграмма схемы с диодами в цепи интегратора],
+) <временная_диаграмма_схемы_с_диодами>
 
 Необходимо выяснить, возможно ли в данную схему добавить регулировки в соответствии с техническим заданием. Для этого была выведена формула зависимости периода от параметров схемы.
 
 Напряжения входа представлены только двумя уровнями с учётом падения напряжения на диодах:
-$ U_"Dint1" = U_"Dint2" = 0.7 "В" $
-$ U_"int_in_max" = V_"CC" = E_"ип" - U_"Dint1" $
-$ U_"int_in_min" = V_"EE" = -E_"ип" + U_"Dint2" $
+$ U_"Dint1" = U_"Dint2" = 0.7 "В"; $
+$ U_"int_in_max" = E_"ип" - U_"Dint1"; $
+$ U_"int_in_min" = -E_"ип" + U_"Dint2" = -U_"int_in_max". $
 
 Поскольку напряжение интегратора отправляется непосредственно на триггер (напряжение с которого отправляется дальше), то напряжения выхода ограничены напряжением срабатывания триггера:
-$ U_"int_out_max" = E_"ип" - U_"запас_нелинейных_искажений" $
-$ U_"int_out_min" = -U_"int_out_max" $
+$ U_"int_out_max" = E_"ип" - U_"запас_нелинейных_искажений"; $
+$ U_"int_out_min" = -E_"ип" + U_"запас_нелинейных_искажений" = -U_"int_out_max". $
 
 Изменение напряжения на выходе интегратора подчиняется следующей формуле:
-$ U_"int_out"(Delta t) = U_0 - U_"int_in" dot (Delta t) / (C R) $
-$ U_"int_in" dot (Delta t) / (C R) = U_0 - U_"int_out"(Delta t) $
-$ Delta t = ((U_0 - U_"int_out"(Delta t)) C R) / U_"int_in" $ <формула_времени>
+$ U_"int_out"(Delta t) = U_0 - U_"int_in" dot (Delta t) / (C R) => $
+$ U_"int_in" dot (Delta t) / (C R) = U_0 - U_"int_out"(Delta t) => $
+$ Delta t = ((U_0 - U_"int_out"(Delta t)) C R) / U_"int_in". $ <формула_времени>
 
 Напряжение изменяется от $U_"int_out_min"$ до $U_"int_out_max"$ и обратно, следовательно
 
-Для $U_"int_in" < 0$
-$ U_0 - U_"int_out"(t_"int_down") = U_"int_out_min" - U_"int_out_max" = -2 U_"int_out_max" $ <формула_напряжения_для_минуса>
-Для $U_"int_in" > 0$
-$ U_0 - U_"int_out"(t_"int_up") = U_"int_out_max" - U_"int_out_min" = 2 U_"int_out_max" $ <формула_напряжения_для_плюса>
+Для $U_"int_in" < 0$:
+$ U_0 - U_"int_out"(t_"int_down") = U_"int_out_min" - U_"int_out_max" = -2 U_"int_out_max". $ <формула_напряжения_для_минуса>
+Для $U_"int_in" > 0$:
+$ U_0 - U_"int_out"(t_"int_up") = U_"int_out_max" - U_"int_out_min" = 2 U_"int_out_max". $ <формула_напряжения_для_плюса>
 
 Подставляя в @формула_времени выражения @формула_напряжения_для_минуса и @формула_напряжения_для_плюса, период сигнала составляет:
 $
@@ -389,7 +415,7 @@ T = t_"int_down" + t_"int_up" = \
 = (-2 U_"int_out_max" C R_"int1") / U_"int_in_min" + (2 U_"int_out_max" C R_"int2") / U_"int_in_max" = \
 = 2 C ((-U_"int_out_max" R_"int1") / U_"int_in_min" + (U_"int_out_max" R_"int2") / U_"int_in_max") = \
 = 2 C ((-U_"int_out_max" R_"int1") / (-U_"int_in_max") + (U_"int_out_max" R_"int2") / U_"int_in_max") = \
-= 2 C U_"int_out_max" / U_"int_in_max" (R_"int1" + R_"int2")
+= 2 C U_"int_out_max" / U_"int_in_max" (R_"int1" + R_"int2").
 $
 
 Данная схема позволяет независимо регулировать период сигнала и скважность. Однако период сигнала может быть отрегулирован независимо от скважности только при помощи конденсатора переменной ёмкости, что увеличивает габариты устройства. Либо при помощи изменений напряжения на выходе интегратора, что непозволительно, т.к. амплитуда выхода должна регулироваться независимо.
