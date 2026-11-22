@@ -5,7 +5,7 @@
     {
       "analysis": "TRAN",
       "commands": [
-        ".tran 20u 20m 10m",
+        ".tran 1u 12.5m 9.8m",
         ".kicad adjustpaths",
         ".save all",
         ".probe alli",
@@ -25,6 +25,16 @@
       "measurements": [],
       "showGrid": true,
       "traces": [
+        {
+          "color": "rgb(77, 175, 74)",
+          "signal": "I(Dint1)",
+          "trace_type": 2
+        },
+        {
+          "color": "rgb(152, 78, 163)",
+          "signal": "I(Dint2)",
+          "trace_type": 2
+        },
         {
           "color": "rgb(228, 26, 28)",
           "signal": "V(/U_int_in)",

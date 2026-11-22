@@ -1,25 +1,67 @@
+# scripts/graph.py
+from collections.abc import Callable
+from pathlib import Path
+from typing import Literal, TypeAlias
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 from matplotlib.ticker import MaxNLocator
-from pathlib import Path
 
+# Удобные псевдонимы — читаемость сигнатур
+Signals: TypeAlias = dict[str, np.ndarray]
+AnnotationCallback: TypeAlias = Callable[[list[Axes], np.ndarray, Signals], None]
 
-def load_time_and_signals_from_csv(filename):
-    dataframe = pd.read_csv(
+fontsize = 14
+
+def load_time_and_signals_from_csv(
+    filename: str | Path,
+    required_keys
+) -> tuple[np.ndarray, Signals]:
+    dataframe: pd.DataFrame = pd.read_csv(
         filename,
         sep=';',
         decimal=',',
         skipinitialspace=True,
     )
     dataframe = dataframe.dropna(axis=1, how='all')
-    time = dataframe[dataframe.columns[0]].to_numpy()
-    signals = {column: dataframe[column].to_numpy()
-               for column in dataframe.columns[1:]}
+    time: np.ndarray = dataframe[dataframe.columns[0]].to_numpy()
+    signals: Signals = {
+        column: dataframe[column].to_numpy()
+        for column in dataframe.columns[1:]
+    }
+
+    missing_keys = required_keys - signals.keys()
+
+    if missing_keys:
+        message = (
+            f"В файле <{filename}>\n"
+            f"отсутствуют сигналы: {missing_keys}.\n"
+            f"Доступные сигналы: {list(signals.keys())}.\n"
+        )
+        raise ValueError(message)
+
     return time, signals
 
+EdgeType = Literal['any', 'rising', 'falling']
+def get_time_by_trigger(
+    time: np.ndarray,
+    signal: np.ndarray,
+    trigger: float,
+    edge: EdgeType = 'any',
+) -> np.ndarray:
+    """
+    Возвращает времена пересечения сигналом уровня trigger.
 
-def get_time_by_trigger(time, signal, trigger):
+    edge : 'any'    — любое пересечение (по умолчанию)
+           'rising' — только нарастающий фронт
+           'falling'— только спадающий фронт
+    """
+    if edge not in ('any', 'rising', 'falling'):
+        raise ValueError("edge должен быть 'any', 'rising' или 'falling'")
+
     time = np.asarray(time, dtype=float)
     signal = np.asarray(signal, dtype=float)
 
@@ -29,7 +71,15 @@ def get_time_by_trigger(time, signal, trigger):
         return np.array([])
 
     shifted = signal - trigger
-    crossing_indices = np.where(np.sign(shifted[:-1]) * np.sign(shifted[1:]) < 0)[0]
+
+    if edge == 'rising':
+        crossing_indices = np.where((shifted[:-1] < 0) & (shifted[1:] > 0))[0]
+    elif edge == 'falling':
+        crossing_indices = np.where((shifted[:-1] > 0) & (shifted[1:] < 0))[0]
+    else:
+        crossing_indices = np.where(
+            np.sign(shifted[:-1]) * np.sign(shifted[1:]) < 0
+        )[0]
 
     if crossing_indices.size == 0:
         return np.array([])
@@ -41,7 +91,11 @@ def get_time_by_trigger(time, signal, trigger):
     return t0 - s0 * (t1 - t0) / (s1 - s0)
 
 
-def make_axes(signal_count, height_per_plot=2.5, width=10):
+def make_axes(
+    signal_count: int,
+    height_per_plot: float = 2.5,
+    width: float = 10,
+) -> tuple[Figure, list[Axes]]:
     figure, axes = plt.subplots(
         nrows=signal_count,
         ncols=1,
@@ -49,45 +103,72 @@ def make_axes(signal_count, height_per_plot=2.5, width=10):
         figsize=(width, height_per_plot * signal_count),
         gridspec_kw={'hspace': 0},
     )
-    if signal_count == 1:
-        axes = [axes]
-    for axis in axes:
-        axis.margins(x=0)
+    axes_list: list[Axes] = list(axes) if signal_count > 1 else [axes]
+    for axis in axes_list:
+        axis.margins(x=0, y=0.2)
         axis.xaxis.set_major_locator(MaxNLocator(nbins=10))
-    return figure, axes
+    return figure, axes_list
+
+def adjust_figure_padding(figure: Figure) -> None:
+    figure.subplots_adjust(left=0.10, right=0.98, top=0.98, bottom=0.06, hspace=0)
+
+LineStyle = Literal['-', '--', '-.', ':']
+MarkerStyle = Literal['o', 's', '^', 'v', 'D', 'x', '+', '*', '.', ',']
+
+def plot_signal(
+    axis: Axes,
+    time: np.ndarray,
+    signal: np.ndarray,
+    name: str = '',
+    line_style: LineStyle = '-',
+    marker: MarkerStyle | None = None,
+) -> None:
+    axis.plot(
+        time, signal,
+        linewidth=1,
+        color="black",
+        label=name,
+        linestyle=line_style,
+        marker=marker,
+        markersize=5,
+        markevery=len(signal)//10,
+    )
+    axis.set_ylabel(name, fontsize=fontsize)
+    axis.grid(True, alpha=0.3)
 
 
-def style_axes_with_arrows(axis):
-    axis.spines['top'].set_visible(False)
-    axis.spines['right'].set_visible(False)
-    axis.spines['bottom'].set_linewidth(1.2)
-    axis.spines['left'].set_linewidth(1.2)
-    axis.plot(1, 0, ">k", transform=axis.get_yaxis_transform(),
-              clip_on=False, markersize=8)
-    axis.plot(0, 1, "^k", transform=axis.get_xaxis_transform(),
-              clip_on=False, markersize=8)
-
-
-def plot_signals(axes, time, signals):
-    for axis, (name, values) in zip(axes, signals.items()):
-        axis.plot(time, values, linewidth=1, color="black", label=name)
-        axis.set_ylabel(name)
-        axis.grid(True, alpha=0.3)
-
-
-def add_vertical_line(axes, position):
+def add_vertical_line(axes: list[Axes], x: float) -> None:
     for axis in axes:
-        axis.axvline(x=position, linestyle='--', linewidth=1, color="black")
+        axis.axvline(x=x, linestyle='--', linewidth=1, color="black")
 
 
-def add_horizontal_line(axis, position):
-    axis.axhline(y=position, linestyle='--', linewidth=1, color="black")
+def add_horizontal_line(axis: Axes, y: float, label: str = '') -> None:
+    axis.axhline(y=y, linestyle='--', linewidth=1, color="black")
+
+    if label:
+        axis.annotate(
+            label,
+            xy=(0, y),
+            xycoords=('axes fraction', 'data'),
+            xytext=(4, 2),
+            textcoords='offset points',
+            ha='left',
+            va='bottom',
+            fontsize=fontsize,
+            color='black',
+        )
 
 
-def draw_dimension_line(axis, point_start, point_end, label,
-                        offset=0.0, fontsize=10, color='black'):
+def draw_dimension_line(
+    axis: Axes,
+    point_start: tuple[float, float],
+    point_end: tuple[float, float],
+    label: str,
+) -> None:
     x_start, y_start = point_start
     x_end, y_end = point_end
+
+    axis.plot([x_start, x_end], [y_start, y_end], linestyle='none', marker='', alpha=0)
 
     axis.annotate(
         '',
@@ -95,7 +176,7 @@ def draw_dimension_line(axis, point_start, point_end, label,
         xytext=point_start,
         arrowprops=dict(
             arrowstyle='<->',
-            color=color,
+            color='black',
             linewidth=1.5,
             shrinkA=0,
             shrinkB=0,
@@ -122,7 +203,7 @@ def draw_dimension_line(axis, point_start, point_end, label,
     perp_display_y = dx_display / length_display
 
     mid_display = axis.transData.transform((x_mid, y_mid))
-    text_display = mid_display + np.array([perp_display_x, perp_display_y]) * offset
+    text_display = mid_display + np.array([perp_display_x, perp_display_y])
     text_x, text_y = axis.transData.inverted().transform(text_display)
 
     axis.text(
@@ -131,35 +212,5 @@ def draw_dimension_line(axis, point_start, point_end, label,
         rotation_mode='anchor',
         ha='center', va='bottom',
         fontsize=fontsize,
-        color=color,
+        color='black',
     )
-
-
-def create_associated_svg_filename(filename):
-    return str(Path(filename).with_suffix('.svg'))
-
-
-def main():
-    filename = "/home/ilia/MY_FILES/ТУСУР/СЭС/КР/Попытка рисовать графики/первый_график.csv"
-    time, signals = load_time_and_signals_from_csv(filename)
-
-    switch_times = get_time_by_trigger(time, signals["V(/U_int_in)"], 0)
-    bottom = min(signals["V(/U_int_out)"])
-    top = max(signals["V(/U_int_out)"])
-
-    figure, axes = make_axes(len(signals))
-
-    plot_signals(axes, time, signals)
-
-    for switch_time in switch_times:
-        add_vertical_line(axes, switch_time)
-    add_horizontal_line(axes[1], bottom)
-    add_horizontal_line(axes[1], top)
-    draw_dimension_line(axes[1], (0.014, bottom), (0.014, top), 'U_p-p')
-
-    figure.tight_layout()
-    figure.savefig(create_associated_svg_filename(filename))
-
-
-if __name__ == '__main__':
-    main()
