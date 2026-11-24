@@ -1,0 +1,1689 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "95a0d981-d6e9-4011-b7db-acf78333be8f")
+	(paper "A4" portrait)
+	(title_block
+		(comment 2 "И.В. Кулманаков")
+	)
+	(lib_symbols
+		(symbol "Device_GOST:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.905 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Capacitor_*:C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -3.9878 0.762) (xy 3.9878 0.762)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.9878 -0.762) (xy 3.9878 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 4.318)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 4.318)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device_GOST:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.54 0.635 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.635 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Resistor_*:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -5.0038 2.0066)
+					(end 5.0038 -2.0066)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at -8.89 0 0)
+					(length 3.8862)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 0 180)
+					(length 3.8862)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device_GOST:R_POT1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.54 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "R_POT1"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.54 0.635 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.635 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Potentiometer_*:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_POT1_0_1"
+				(rectangle
+					(start -5.0038 2.0066)
+					(end 5.0038 -2.0066)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_POT1_1_1"
+				(polyline
+					(pts
+						(xy 0 2.0066) (xy -0.8128 5.0038)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.0066) (xy -0.8128 5.0038)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.0066) (xy 0.8128 5.0038)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.0066) (xy 0.8128 5.0038)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -8.89 0 0)
+					(length 3.8862)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 6.35 270)
+					(length 4.3434)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 8.89 0 180)
+					(length 3.8862)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device_GOST:VD"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "VD"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Value" "VD"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.4892 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at -2.4892 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Diode_*:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VD_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.4892 2.9972) (xy -2.4892 -2.9972)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.4892 0) (xy 2.4892 2.9972) (xy 2.4892 -2.9972) (xy -2.4892 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VD_1_1"
+				(pin passive line
+					(at -6.35 0 0)
+					(length 3.81)
+					(name "K"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 0 180)
+					(length 3.81)
+					(name "A"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device_GOST:VT_PNP_BCE"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "VT"
+				(at 8.89 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "VT_PNP_BCE"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.8128 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.8128 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VT_PNP_BCE_0_1"
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -0.6604 0)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.6604 4.5212) (xy -0.6604 -4.5212)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.6604 2.5908) (xy 3.81 5.1816)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.6604 -2.5908) (xy 1.4732 -4.7498)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.6604 -2.5908) (xy 2.3368 -3.4036)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.6604 -2.5908) (xy 3.81 -5.1816)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0.8128 0)
+					(radius 5.9944)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 6.35) (xy 3.81 5.1816)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -6.35) (xy 3.81 -5.1816)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VT_PNP_BCE_1_1"
+				(pin passive line
+					(at -8.89 0 0)
+					(length 3.81)
+					(name "B"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 8.89 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 -8.89 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device_GOST:ZQ_CRYSTAL"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "ZQ"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Value" "ZQ_CRYSTAL"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 2.0066 2.0066)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.54 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Crystal_* Resonator*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ZQ_CRYSTAL_0_1"
+				(polyline
+					(pts
+						(xy -1.9812 1.9812) (xy -1.9812 -1.9812)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.016 2.9972)
+					(end 0.9652 -2.9972)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.9812 1.9812) (xy 1.9812 -1.9812)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ZQ_CRYSTAL_1_1"
+				(pin passive line
+					(at -6.35 0 0)
+					(length 4.3688)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.35 0 180)
+					(length 4.3688)
+					(name "~"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 2.0066 2.0066)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:VD")
+		(at 118.11 38.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62f701cd-5de7-453b-90f2-3bfe41b62fd2")
+		(property "Reference" "VD?"
+			(at 118.11 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "VD"
+			(at 118.11 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-15_P15.24mm_Horizontal"
+			(at 115.6208 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 115.6208 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 118.11 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" "КД503А"
+			(at 118.11 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Диод"
+			(at 118.11 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "16952928-085c-4549-ba63-af6f65993fd4")
+		)
+		(pin "1"
+			(uuid "ee73c3b4-3a91-4487-8a12-5622cde4bfc3")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "VD?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:ZQ_CRYSTAL")
+		(at 83.82 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a248e1c1-f8e1-481b-ab35-19884ae469b6")
+		(property "Reference" "ZQ?"
+			(at 83.82 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "ZQ_CRYSTAL"
+			(at 83.82 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Footprint" "Buzzer_Beeper:Buzzer_15x7.5RM7.6"
+			(at 81.28 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" "ЗП-З"
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Пьезоизлучатель"
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7f1db93d-6a6a-47f7-99cd-9d957bb1c210")
+		)
+		(pin "2"
+			(uuid "c6bdd22d-a360-4ea5-8382-691753330e1a")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "ZQ?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:C")
+		(at 99.06 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aa3fda82-801d-4413-89d2-e774a89eb931")
+		(property "Reference" "C?"
+			(at 93.98 76.835 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0,05"
+			(at 93.98 80.645 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm"
+			(at 97.155 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.695 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" "К10-17б-Н20-${Value}мкФ±10%-В ОЖ0.460.172 ТУ"
+			(at 99.06 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Конденсаторы"
+			(at 99.06 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98e2b9c6-a960-4c75-be7c-27adfa3f3646")
+		)
+		(pin "2"
+			(uuid "3d1e7e84-c223-4cf0-a3b6-a4462d682f1e")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:R_POT1")
+		(at 118.11 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b00ca0e0-d949-449c-ab05-d15cab231bcf")
+		(property "Reference" "R?"
+			(at 118.11 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "10кОм"
+			(at 118.11 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 115.57 100.965 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.745 106.045 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 118.11 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" ""
+			(at 118.11 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Резисторы"
+			(at 118.11 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "94ab8fd5-1378-4019-ad4f-93e8f5833dae")
+		)
+		(pin "3"
+			(uuid "c2a7d3a8-4063-4164-998a-e1098264921f")
+		)
+		(pin "2"
+			(uuid "b0385936-1da7-4118-b0a7-ee8ba8c1d025")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:VT_PNP_BCE")
+		(at 77.47 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6b88cbe-0ffb-41c2-8ef0-77b5ac809a44")
+		(property "Reference" "VT?"
+			(at 85.09 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VT_PNP_BCE"
+			(at 77.47 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 78.2828 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.2828 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 77.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" "КТ362Б"
+			(at 77.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Транзисторы"
+			(at 77.47 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9345b8ea-070f-42a2-a1f2-7d3f75c7871f")
+		)
+		(pin "3"
+			(uuid "8b5723dc-8816-4c77-8056-3528d633d543")
+		)
+		(pin "1"
+			(uuid "e13bd1f6-4655-452e-bced-b8ace84acb19")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "VT?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device_GOST:R")
+		(at 48.26 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa4e1c82-4055-478e-b24f-c5e3310f4851")
+		(property "Reference" "R?"
+			(at 48.26 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Value" "10кОм"
+			(at 48.26 97.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 45.72 102.235 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.895 107.315 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 48.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Наименование" "МЛТ-0,125-${Value}Ом"
+			(at 48.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Тип" "Резисторы"
+			(at 48.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98bd2d73-0be2-44cf-b07f-3f02b4e5e0bf")
+		)
+		(pin "2"
+			(uuid "b906b2d7-afc0-4d02-974d-25f2fd9225b4")
+		)
+		(instances
+			(project "Ультразвуковой отпугиватель"
+				(path "/95a0d981-d6e9-4011-b7db-acf78333be8f"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "gost_portrait.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WBfIJUnAHYrhDFQdTow6/sN5DR/vmVgznO2BusTYfKKtjvhvi10ZG94TYSBbSllkimVFJR/
+				JcJMEVMDfgBnAH0A+7i/V7RtMozaypdq5qcZrpsZRiDAHs4EVZBu6xqySW21zWzTNgydddu8dNNQ
+				ELUVhm6mgQBjdno0GbV0MzePRqnG8NEoVf0DB9uoSm6GcTaNZ4E6zE71Xbnl9oE2YBIzwzpU9Vbv
+				nMBANDQptZ8IOkHULgCN0ESazsLkaD5UNEZm9/79u9xl5HdPynXenmlUy9wzO+R1zh0M8Ch73eUu
+				o3uQv//xilyve4/s3q59/3GHnOtLOoz/0P35ubcvn0eXsP+xu2O37n9dXy3/8boIPwZsKDq/6KL7
+				t6iTabyZhtGPRrd9MrKkXrwFmytItSP6Nhz192Ped4/ckfd6PDpVcHTAOnYqJhQnU3XZaL5KLvGS
+				KrWkVONbcLPZCWk81LKEGt/86uhEqhnu2kk1VNviumVSWaqpkipKxai9TZrNzYocMAqKgLDa9y34
+				vCDtgyDAGGulWpxSakstVdJLAWZpaFKGAJV/5H7s7V6/xR0hX0y3KC9+6+LleB9CN/BYvrjfn9C9
+				8yG6O800B2rlQ8i89z7I8EouyDznCpldaakk1+g0Ilvk4tikkAhRQLr/40Vnj839uEt1TXUtl1r6
+				+HbNUk/qSjW51KU4ndSPfetJvihOoxNLSrU8roFkqDFJqmZEkoKkkGENYZXAGILVnR2SQAyCMBgC
+				QSAJYhQEQgJIDCGEEEIIIoqIkGQ7ILMgQfivlGy7fIIh32xu1rMS7V9tX8Y0hv5JoJu5sh9Rsqj4
+				3CqSm2nBM044xoP3O8ZSZCl52BqX4cYaktE/GwXHYRF0XX9voHp025zZoiugfR7/UYmUiqB0tcdA
+				TA0NKtLQ8MuEI2TuZWb7V6MH4jOx0ynQQ/8rO9actk1QZS0I+VqNtB+NfKgvFrJddPfrkziywAVg
+				xwC/YcmNO3kvC0vnZ0HWThTb8sDAWIaK8X0Pw4R08aCCvJHAkE4H/ySENw3xnt7g9dt82a6Pyc4C
+				jKZsmjfglvNzUOyJifeRJDYjFQZ8mCe1em4fa+zFsQkhyipUrSrcs08t0AZSNw/xlPh0YvRUCrwT
+				kdmvD5JowyinY58R3xbTzNkowzpGcX/aWRsGTe5fWzdnGX3Rm4w583Ys6Iax1FN/FAb/+eT8H6TC
+				FwF+FoXn2+np9IkYesZabREA95xjT3EO07UJKxhQLlKrzsrAOXMFTl5nvEamOdAaF75KTAqHtm0o
+				oKYLKRRfdoQUtGb7OnMEM4SB6Wki1EQJU3T5BA6Pzuc4PkpgANVVlyuXrupaeMnBsJCCUeHwxGGN
+				YH8NTiLJpMb/YNhVrMA3AoB8lP6O7pR5RO4EKXTYPfVaZSWKnZS0oLGbA7Ay5dJtFEdBauH8lrLw
+				ukgYFymibtIQTXfyUm7b+GCJSgiR7GbZ3sf17evGy0Cr+FXkJfXjFbVJkK8EUZ3AqBqyunNIUU5n
+				Xyqj52PkBmIXtBAwgKsYobEsQdT2E1boYbNrtDqf1JjvV1KRI2Hy2eomc9iJN8kOSUwhSCW4RKLh
+				pXUwIy8SyOy8bsX04zpzSl40BQCySEQYjEZffAkXkntIxjy4JG+WGNmypsQli2eza5vRy+j3lVx9
+				5EXrCpRcPhLxp/pCVRqtr8gDNT6kCg==|
+			)
+			(checksum "55C95474EEE6BFA28099C40EE6009E36")
+		)
+	)
+)
